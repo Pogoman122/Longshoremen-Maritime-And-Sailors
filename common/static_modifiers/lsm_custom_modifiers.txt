@@ -1,0 +1,28 @@
+﻿lsm_modifier_scouring_ports = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	state_radicals_from_political_movements_mult = -0.05
+	building_port_throughput_add = -0.25
+}
+	
+lsm_modifier_scouring_fisheries = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_fire_negative.dds
+	state_radicals_from_political_movements_mult = -0.05
+	building_fishing_wharf_throughput_add = -0.25
+	building_whaling_station_throughput_add = -0.25
+}
+
+low_rank_admiral_ig_opinion_add = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add = 2
+}
+
+low_rank_admiral_ig_opinion_remove = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
+	interest_group_approval_add = -2
+}
+
+high_rank_admiral_opinion = {
+	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
+	interest_group_approval_add = 2
+}
+

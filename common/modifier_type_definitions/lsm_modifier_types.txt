@@ -1,0 +1,199 @@
+﻿building_group_bg_private_infrastructure_longshoremen_mortality_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_private_infrastructure_longshoremen_standard_of_living_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+building_longshoremen_job_attractiveness_mult={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_longshoremen_standard_of_living_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+country_longshoremen_pol_str_mult={
+	decimals=0
+	color=neutral
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+state_longshoremen_investment_pool_contribution_add={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+state_longshoremen_investment_pool_efficiency_mult={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_longshoremen_shares_add={
+	decimals=0
+	color=neutral
+	game_data={
+		ai_value=0
+	}
+}
+
+building_longshoremen_mortality_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_employment_longshoremen_add={
+	decimals=0
+	color=neutral
+	game_data={
+		ai_value=0
+	}
+}
+
+
+building_sailors_standard_of_living_add={
+	decimals=1
+	color=good
+	game_data={
+		ai_value=0
+	}
+}
+
+building_sailors_job_attractiveness_mult={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+state_sailors_investment_pool_contribution_add={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+state_sailors_investment_pool_efficiency_mult={
+	decimals=0
+	color=good
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_sailors_shares_add={
+	decimals=0
+	color=neutral
+	game_data={
+		ai_value=0
+	}
+}
+
+state_sailors_mortality_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_employment_sailors_add={
+	decimals=0
+	color=neutral
+	game_data={
+		ai_value=0
+	}
+}
+
+country_sailors_voting_power_add={
+	decimals=0
+	color=neutral
+	game_data={
+		ai_value=0
+	}
+}
+
+country_sailors_pol_str_mult={
+	decimals=0
+	color=neutral
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_fishing_longshoremen_mortality_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_infrastructure_longshoremen_mortality_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+building_group_bg_whaling_longshoremen_mortality_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}
+
+state_longshoremen_mortality_mult={
+	decimals=0
+	color=bad
+	percent=yes
+	game_data={
+		ai_value=0
+	}
+}

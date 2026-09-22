@@ -1,0 +1,8 @@
+﻿movement_support_longshoremen = {
+	name = POP_LONGSHOREMEN
+}
+
+
+movement_support_sailors = {
+	name = POP_SAILORS
+}

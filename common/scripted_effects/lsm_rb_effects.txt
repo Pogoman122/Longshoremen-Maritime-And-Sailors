@@ -1,0 +1,182 @@
+# ANY scope. Remember Canada's colonial parties before independence or tag
+# changes, without imposing the agreement on unrelated lakeside countries.
+lsm_rb_record_successors = {
+	every_country = {
+		limit = {
+			NOR = { lsm_rb_is_usa = yes is_revolutionary = yes is_secessionist = yes }
+			OR = { is_subject_of = c:GBR lsm_rb_is_canada = yes }
+			any_scope_state = {
+				OR = { state_region = s:STATE_ONTARIO state_region = s:STATE_QUEBEC }
+			}
+			NOT = { has_variable = lsm_rb_canadian_successor }
+		}
+		set_variable = lsm_rb_canadian_successor
+	}
+}
+
+# ANY scope. Uses on_actions/events for notifications; they carry no state
+# changes, so an old popup cannot restore or cancel a later treaty.
+lsm_rb_notify_participants = {
+	every_country = {
+		limit = { lsm_rb_is_participant = yes is_player = yes }
+		trigger_event = { id = $EVENT$ popup = yes }
+	}
+}
+
+lsm_rb_clear_consents = {
+	every_country = {
+		limit = { has_variable = lsm_rb_renewal_consent }
+		remove_variable = lsm_rb_renewal_consent
+	}
+}
+
+# STATE scope. Called on ownership changes and by the global maintenance pass.
+lsm_rb_sync_state = {
+	if = {
+		limit = { lsm_rb_state_is_demilitarized = yes }
+		if = {
+			limit = { NOT = { has_modifier = lsm_rb_naval_restrictions } }
+			add_modifier = { name = lsm_rb_naval_restrictions }
+		}
+	}
+	else_if = {
+		limit = { has_modifier = lsm_rb_naval_restrictions }
+		remove_modifier = lsm_rb_naval_restrictions
+	}
+}
+
+lsm_rb_sync_all_states = {
+	every_country = {
+		every_scope_state = {
+			limit = {
+				OR = {
+					lsm_rb_is_restricted_state = yes
+					has_modifier = lsm_rb_naval_restrictions
+				}
+			}
+			lsm_rb_sync_state = yes
+		}
+	}
+}
+
+# ANY scope. Idempotent: safe from a JE pulse, global hook or console event.
+# A timed variable avoids delayed-event races after war/renewal.
+lsm_rb_tick = {
+	lsm_rb_record_successors = yes
+	if = {
+		limit = { NOT = { has_global_variable = lsm_rb_state } }
+		set_global_variable = { name = lsm_rb_state value = 1 }
+	}
+
+	if = {
+		limit = { lsm_rb_parties_exist = no }
+		set_global_variable = { name = lsm_rb_state value = 4 }
+		remove_global_variable = lsm_rb_notice_clock
+		lsm_rb_clear_consents = yes
+	}
+	else_if = {
+		limit = { lsm_rb_parties_at_war = yes }
+		if = {
+			limit = { OR = { global_var:lsm_rb_state = 1 global_var:lsm_rb_state = 2 } }
+			set_global_variable = { name = lsm_rb_state value = 3 }
+			lsm_rb_notify_participants = { EVENT = lsm_rush_bagot.3 }
+		}
+		remove_global_variable = lsm_rb_notice_clock
+		lsm_rb_clear_consents = yes
+	}
+	else_if = {
+		limit = { global_var:lsm_rb_state = 3 }
+		set_global_variable = { name = lsm_rb_state value = 4 }
+		lsm_rb_clear_consents = yes
+		lsm_rb_notify_participants = { EVENT = lsm_rush_bagot.4 }
+	}
+	else_if = {
+		limit = {
+			global_var:lsm_rb_state = 2
+			NOT = { has_global_variable = lsm_rb_notice_clock }
+		}
+		set_global_variable = { name = lsm_rb_state value = 4 }
+		lsm_rb_clear_consents = yes
+		lsm_rb_notify_participants = { EVENT = lsm_rush_bagot.2 }
+	}
+
+	# Dropped/changed signatories, hostile relations, new bases, and renewed
+	# war invalidate old votes. Expired votes are removed by the engine.
+	every_country = {
+		limit = {
+			has_variable = lsm_rb_renewal_consent
+			lsm_rb_can_negotiate = no
+		}
+		remove_variable = lsm_rb_renewal_consent
+	}
+	if = {
+		limit = {
+			global_var:lsm_rb_state = 4
+			lsm_rb_parties_at_war = no
+			lsm_rb_all_principals_consent = yes
+			lsm_rb_any_party_has_lake_bases = no
+		}
+		set_global_variable = { name = lsm_rb_state value = 1 }
+		lsm_rb_clear_consents = yes
+		lsm_rb_notify_participants = { EVENT = lsm_rush_bagot.6 }
+	}
+
+	lsm_rb_sync_all_states = yes
+	# Existing/queued bases are reported, never destroyed or converted here.
+	every_country = {
+		if = {
+			limit = {
+				lsm_rb_is_participant = yes
+				lsm_rb_treaty_in_force = yes
+				lsm_rb_has_lake_bases = yes
+			}
+			if = {
+				limit = { NOT = { has_variable = lsm_rb_breach_reported } }
+				set_variable = lsm_rb_breach_reported
+				if = {
+					limit = { is_player = yes }
+					trigger_event = { id = lsm_rush_bagot.7 popup = yes }
+				}
+			}
+		}
+		else = { remove_variable = lsm_rb_breach_reported }
+	}
+}
+
+# COUNTRY scope. Recheck on execution, even if a button was rendered earlier.
+lsm_rb_give_notice = {
+	if = {
+		limit = { lsm_rb_can_give_notice = yes }
+		set_global_variable = { name = lsm_rb_state value = 2 }
+		set_global_variable = { name = lsm_rb_notice_clock months = 6 }
+		lsm_rb_clear_consents = yes
+		if = {
+			limit = { lsm_rb_is_usa = yes }
+			every_country = {
+				limit = { lsm_rb_is_northern_principal = yes }
+				change_relations = { country = c:USA value = -10 }
+			}
+		}
+		else = { change_relations = { country = c:USA value = -10 } }
+		lsm_rb_notify_participants = { EVENT = lsm_rush_bagot.1 }
+		lsm_rb_tick = yes
+	}
+}
+
+# COUNTRY scope. Votes last six months. Each principal casts its own vote;
+# a player cannot silently sign for an AI or another human country.
+lsm_rb_offer_renewal = {
+	if = {
+		limit = { lsm_rb_can_offer_renewal = yes }
+		set_variable = { name = lsm_rb_renewal_consent months = 6 }
+		every_country = {
+			limit = {
+				lsm_rb_is_principal = yes
+				is_player = yes
+				NOT = { has_variable = lsm_rb_renewal_consent }
+			}
+			trigger_event = { id = lsm_rush_bagot.5 popup = yes }
+		}
+		lsm_rb_tick = yes
+	}
+}

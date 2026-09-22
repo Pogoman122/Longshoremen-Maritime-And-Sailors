@@ -1,0 +1,6 @@
+﻿INJECT:shudras = {
+	allowed_professions = {
+		longshoremen
+		sailors
+	}
+}

@@ -1,0 +1,64 @@
+lsm_je_rush_bagot = {
+	group = lsm_rb_journal_group
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	weight = 15
+	can_deactivate = yes
+	transferable = no
+	can_revolution_inherit = yes
+	progressbar = no
+	should_update_on_player_command = yes
+
+	is_shown_when_inactive = { lsm_rb_is_participant = yes }
+	possible = { lsm_rb_is_participant = yes }
+	immediate = { lsm_rb_tick = yes }
+
+	# This is a standing diplomatic arrangement, not a one-shot reward JE.
+	# A sole USA pulse prevents every subject from repeating global work.
+	on_weekly_pulse = {
+		effect = {
+			if = { limit = { lsm_rb_is_usa = yes } lsm_rb_tick = yes }
+		}
+	}
+
+	scripted_button = lsm_rb_notice_button
+	scripted_button = lsm_rb_renewal_button
+
+	status_desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = { lsm_rb_parties_exist = no }
+				desc = lsm_rb_status_no_counterpart
+			}
+			triggered_desc = {
+				trigger = { lsm_rb_parties_at_war = yes }
+				desc = lsm_rb_status_war
+			}
+			triggered_desc = {
+				trigger = { has_global_variable = lsm_rb_state global_var:lsm_rb_state = 2 }
+				desc = lsm_rb_status_notice
+			}
+			triggered_desc = {
+				trigger = {
+					lsm_rb_treaty_in_force = yes
+					lsm_rb_any_party_has_lake_bases = yes
+				}
+				desc = lsm_rb_status_breach
+			}
+			triggered_desc = {
+				trigger = { lsm_rb_treaty_in_force = yes }
+				desc = lsm_rb_status_active
+			}
+			triggered_desc = {
+				trigger = { has_variable = lsm_rb_renewal_consent }
+				desc = lsm_rb_status_our_consent
+			}
+			triggered_desc = {
+				trigger = {
+					any_country = { lsm_rb_is_principal = yes has_variable = lsm_rb_renewal_consent }
+				}
+				desc = lsm_rb_status_offer
+			}
+			desc = lsm_rb_status_lapsed
+		}
+	}
+}

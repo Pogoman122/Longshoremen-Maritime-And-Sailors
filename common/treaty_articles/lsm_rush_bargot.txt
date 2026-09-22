@@ -1,0 +1,17 @@
+rush_bagot_treaty_article = {
+    kind = mutual
+    cost = 100
+
+    relations_progress_per_day = 1
+    relations_improvement_max = 50
+
+	max_target_involvement = 500
+	target_involvement_applies_to = target_country
+
+	icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/no_strait_closure_treaties.dds"
+
+	maintenance_paid_by = target_country
+	usage_limit = once_per_side
+	
+}
+	

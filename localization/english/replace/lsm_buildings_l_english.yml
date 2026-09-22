@@ -1,0 +1,6 @@
+﻿l_english:
+ building_government_lighthouse:0 "Lighthouse"
+ bg_lighthouse: "Lighthouses"
+ canal_welland: "Welland Canal"
+ building_welland_canal:0 "Welland Canal"
+ building_welland_canal_lens_option:0 "Construct $building_welland_canal$"

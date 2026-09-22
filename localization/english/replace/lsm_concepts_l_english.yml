@@ -1,0 +1,4 @@
+﻿l_english:
+ concept_sailor: "Seaman"
+ concept_sailors: "Seamen"
+ concept_sailor_desc: "[GetPopType('sailors').GetName] and [SelectLocalization(GetPlayer.IsValid,'concept_ship_crew_desc_added','Officers')] that form the [concept_ship_crew] of a [concept_ship].\n\nBuilding or expanding [GetBuildingType('building_naval_administration').GetName] [Concept('concept_building', '$concept_buildings$')] raises the available $concept_sailors$. Idle $concept_sailors$ are still paid for, so surplus capacity is wasted [concept_government_expenses]."

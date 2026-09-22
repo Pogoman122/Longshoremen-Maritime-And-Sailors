@@ -1,0 +1,35 @@
+﻿building_government_lighthouse = {
+
+	building_group = bg_lighthouse
+	city_type = port
+	levels_per_mesh = 1
+
+	expandable = no
+
+	downsizeable = no
+
+	production_method_groups = {
+		pmg_base_building_lighthouse	
+	}
+
+	unlocking_technologies = {
+		navigation
+	}
+	
+	potential = {
+		is_coastal = yes
+	}
+	
+	required_construction = construction_cost_medium
+	terrain_manipulator = urban_port
+
+	icon = "gfx/interface/icons/building_icons/lighthouse.dds"
+
+	can_build_private = {
+		always = no
+	}
+
+	ai_value = 50000
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_harbour.dds"
+}

@@ -1,0 +1,38 @@
+@sol_icon_fontsize = 45
+
+texticon = {
+  icon = sailors
+  iconsize = {
+    offset = { 0 50 }
+    texture = "gfx/interface/icons/pops_icons/sailors.dds"
+    fontsize = 250
+  }
+}
+
+texticon = {
+  icon = sailors
+  iconsize = {
+    offset = { 0 5 }
+    texture = "gfx/interface/icons/pops_icons/sailors_15.dds"
+    fontsize = 30
+  }
+}
+
+texticon = {
+  icon = longshoremen
+  iconsize = {
+    offset = { 0 50 }
+    texture = "gfx/interface/icons/pops_icons/longshoremen.dds"
+    fontsize = 250
+  }
+}
+
+texticon = {
+  icon = longshoremen
+  iconsize = {
+    offset = { 0 5 }
+    texture = "gfx/interface/icons/pops_icons/longshoremen_15.dds"
+    fontsize = 30
+  }
+}
+

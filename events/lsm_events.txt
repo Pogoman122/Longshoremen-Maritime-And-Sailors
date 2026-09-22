@@ -1,0 +1,86 @@
+﻿namespace = lsm_events
+
+lsm_events.1 = {
+    type = country_event
+    placement = scope:lsm_lighthouse_accident_state
+
+    title = lsm_events.1.t
+    desc = lsm_events.1.d
+    flavor = lsm_events.1.f
+
+    event_image = {
+        video = "unspecific_iceberg"
+    }
+
+    icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+    on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+    duration = 3
+    cooldown = { years = 5 }
+
+    trigger = {
+        any_scope_state = {
+            is_coastal = yes
+
+            any_scope_building = {
+                is_building_type = building_port
+                level > 0
+            }
+
+            NOT = {
+                any_scope_building = {
+                    is_building_type = building_government_lighthouse
+                    level > 0
+                }
+            }
+
+            any_scope_pop = {
+                is_pop_type = longshoremen
+                total_size >= 150
+            }
+        }
+    }
+
+    immediate = {
+        random_scope_state = {
+            limit = {
+                is_coastal = yes
+
+                any_scope_building = {
+                    is_building_type = building_port
+                    level > 0
+                }
+
+                NOT = {
+                    any_scope_building = {
+                        is_building_type = building_government_lighthouse
+                        level > 0
+                    }
+                }
+
+                any_scope_pop = {
+                    is_pop_type = longshoremen
+                    total_size >= 150
+                }
+            }
+
+            save_scope_as = lsm_lighthouse_accident_state
+
+            kill_population_in_state = {
+                pop_type = longshoremen
+                value = 150
+            }
+				add_radicals_in_state = {
+				value = medium_radicals
+				pop_type = longshoremen
+			}
+			
+        }
+    }
+
+    option = {
+        name = lsm_events.1.a
+        default_option = yes
+        custom_tooltip = lsm_events.1.deaths_tt
+    }
+}

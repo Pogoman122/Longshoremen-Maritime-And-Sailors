@@ -1,0 +1,14 @@
+﻿canal_welland = {
+	type = artificial
+
+	total_block_requires_full_control = no
+	military_block_requires_full_control = no
+	tolls_require_full_control = no
+
+	first_land_endpoint = x24691A
+	second_land_endpoint = xE217B5
+
+	first_sea_endpoint = x1ACBFD
+	second_sea_endpoint = x1BDFFD
+}
+

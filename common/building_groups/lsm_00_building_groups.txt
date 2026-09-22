@@ -1,0 +1,15 @@
+﻿bg_lighthouse = {
+	category = development
+
+	always_possible = yes
+
+	is_government_funded = yes
+
+	lens = development
+
+	urbanization = 5
+	infrastructure_usage_per_level = 1
+
+	construction_efficiency_modifier = yes
+}
+}

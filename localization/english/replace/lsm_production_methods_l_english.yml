@@ -1,0 +1,7 @@
+﻿l_english:
+
+ pm_base:0 "Base"
+ pmg_base_building_lighthouse:1 "$pm_base$"
+ pm_lighthouse_argand_lamp:0 "Argand Lamp"
+ pm_lighthouse_gas_lamp:0 "Gas Lamp"
+ pm_lighthouse_electric_lamp:0 "Electric Lamp"

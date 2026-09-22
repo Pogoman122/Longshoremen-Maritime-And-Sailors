@@ -1,0 +1,6 @@
+﻿INJECT:lower_class = {
+    allowed_professions = {
+        longshoremen
+        sailors
+    }
+}

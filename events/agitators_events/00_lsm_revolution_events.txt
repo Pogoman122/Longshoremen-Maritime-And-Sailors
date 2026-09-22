@@ -1,0 +1,184 @@
+﻿namespace = revolution_lsm_events
+
+# Ship Mutiny!
+revolution_lsm_events.1 = {
+	type = country_event
+	placement = root
+
+	duration = 3
+
+	title = revolution_lsm_events.1.t
+	desc = revolution_lsm_events.1.d
+	flavor = revolution_lsm_events.1.f
+
+	category = revolution
+
+	event_image = {
+		video = "unspecific_naval_battle"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	cooldown = { days = normal_modifier_time }
+
+	trigger = {
+		NOT = { has_variable = revolution_event_cooldown }
+		any_civil_war = {
+			is_civil_war_type = revolution
+			civil_war_progress_high = yes
+		}
+		any_interest_group = {
+			is_insurrectionary = yes
+		}
+		any_scope_state = {
+			is_incorporated = yes
+			turmoil >= 0.25
+			any_scope_building = {
+				is_building_type = building_naval_administration
+				level >= 3
+				occupancy >= 0.3
+			}
+		}
+	}
+
+	cancellation_trigger = {
+		NOT = {
+			any_civil_war = {
+				is_civil_war_type = revolution
+				civil_war_progress_high = yes
+			}
+		}
+	}
+
+
+	immediate = {
+		random_civil_war = {
+			limit = {
+				is_civil_war_type = revolution
+				civil_war_progress_high = yes
+			}
+			civil_war_save_scopes = yes
+		}
+		random_interest_group = {
+			limit = {
+				is_insurrectionary = yes
+			}
+			save_scope_as = lsm_ship_mutiny_ig
+		}
+		random_scope_state = {
+			limit = {
+				is_incorporated = yes
+				turmoil >= 0.25
+				any_scope_building = {
+					is_building_type = building_naval_administration
+					level >= 3
+					occupancy >= 0.3
+				}
+			}
+			random_scope_building = {
+				limit = {
+					is_building_type = building_naval_administration
+					level >= 3
+					occupancy >= 0.3
+				}
+				save_scope_as = lsm_ship_mutiny_building
+			}
+			save_scope_as = lsm_ship_mutiny_state
+		}
+		set_variable = { name = revolution_event_cooldown days = 30 }
+	}
+
+	option = {
+		name = revolution_lsm_events.1.a
+		default_option = yes
+		if = {
+			limit = {
+				scope:lsm_ship_mutiny_state = {
+					any_scope_building = {
+						is_building_type = building_port
+						level > 5
+					}
+				}
+			}
+			random_list = {
+				20 = {
+					scope:ongoing_revolution = {
+						add_civil_war_progress = revolution_retreat_medium
+					}
+				}
+				80 = {
+					scope:ongoing_revolution = {
+						add_civil_war_progress = revolution_advance_medium
+					}
+				}
+			}
+		}
+		else = {
+			random_list = {
+				40 = {
+					scope:ongoing_revolution = {
+						add_civil_war_progress = revolution_retreat_medium
+					}
+				}
+				60 = {
+					scope:ongoing_revolution = {
+						add_civil_war_progress = revolution_advance_medium
+					}
+				}
+			}
+		}
+		scope:lsm_ship_mutiny_state = {
+			add_modifier = {
+				name = lsm_modifier_scouring_ports
+				days = normal_modifier_time
+			}
+		}
+	}
+	option = {
+		name = revolution_lsm_events.1.b
+		if = {
+			limit = {
+				scope:lsm_ship_mutiny_state = {
+					any_scope_building = {
+						is_building_type = building_port
+						level > 5
+					}
+				}
+			}
+			random_list = {
+				80 = {
+					scope:ongoing_revolution = {
+						add_civil_war_progress = revolution_retreat_medium
+					}
+				}
+				20 = {
+					scope:ongoing_revolution = {
+						add_civil_war_progress = revolution_advance_medium
+					}
+				}
+			}
+		}
+		else = {
+			random_list = {
+				60 = {
+					scope:ongoing_revolution = {
+						add_civil_war_progress = revolution_retreat_medium
+					}
+				}
+				40 = {
+					scope:ongoing_revolution = {
+						add_civil_war_progress = revolution_advance_medium
+					}
+				}
+			}
+		}
+		scope:lsm_ship_mutiny_state = {
+			add_modifier = {
+				name = lsm_modifier_scouring_fisheries
+				days = normal_modifier_time
+			}
+		}
+	}
+}

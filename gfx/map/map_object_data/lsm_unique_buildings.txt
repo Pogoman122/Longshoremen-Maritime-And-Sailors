@@ -1,0 +1,15 @@
+﻿game_object_locator={
+	name="canal_welland_locator"
+	clamp_to_water_level=no
+	render_under_water=yes
+	generated_content=no
+	layer="static"
+	instances={
+		{
+			id=1
+			position={ 2380.000000 0.000000 2606.000000 }
+			rotation={ 0.000000 0.000000 0.000000 0.000000 }
+			scale={ 1.000000 1.000000 1.000000 }
+		}
+	}
+}

@@ -1,0 +1,22 @@
+# Append child on_actions instead of replacing vanilla effect blocks.
+on_game_started = { on_actions = { lsm_rb_maintenance } }
+on_monthly_pulse = { on_actions = { lsm_rb_maintenance } }
+on_diplo_play_war_start = { on_actions = { lsm_rb_war_changed } }
+on_war_end = { on_actions = { lsm_rb_war_changed } }
+on_state_owner_change = { on_actions = { lsm_rb_state_changed } }
+
+lsm_rb_maintenance = { effect = { lsm_rb_tick = yes } }
+
+# Runtime war predicates may settle after the hook. USA's weekly JE pass
+# and the monthly global fallback reconcile that case; no global-at-war test.
+lsm_rb_war_changed = {
+	trigger = { has_global_variable = lsm_rb_state }
+	effect = { lsm_rb_tick = yes }
+}
+
+# ROOT/THIS is the state in this hook. Reconcile this state immediately,
+# with membership/constitutional changes followed up by the regular pulse.
+lsm_rb_state_changed = {
+	trigger = { has_global_variable = lsm_rb_state }
+	effect = { lsm_rb_sync_state = yes }
+}

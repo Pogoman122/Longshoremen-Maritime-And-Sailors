@@ -1,0 +1,205 @@
+# COUNTRY scope unless labelled otherwise. No dependence on ROOT in helpers.
+# Keep named countries on the LEFT of identity comparisons. The explicit
+# existence check keeps a missing country from matching an optional comparison.
+lsm_rb_is_usa = {
+	exists = c:USA
+	c:USA ?= this
+}
+
+lsm_rb_is_britain = {
+	exists = c:GBR
+	c:GBR ?= this
+}
+
+lsm_rb_is_canada = {
+	exists = c:CAN
+	c:CAN ?= this
+}
+
+lsm_rb_britain_has_lake_interest = {
+	OR = {
+		any_scope_state = { lsm_rb_is_lakeside_state = yes }
+		any_country = {
+			NOT = { lsm_rb_is_usa = yes }
+			is_subject_of = c:GBR
+			any_scope_state = { lsm_rb_is_lakeside_state = yes }
+		}
+	}
+}
+
+# Britain represents its subjects. Independent Canada/remembered Canadian
+# successors speak for themselves. If Britain retains lake holdings after
+# Canada's independence, BOTH remain parties instead of discarding Britain.
+lsm_rb_is_northern_principal = {
+	is_country_alive = yes
+	is_subject = no
+	NOR = {
+		lsm_rb_is_usa = yes
+		is_revolutionary = yes
+		is_secessionist = yes
+		is_country_type = decentralized
+	}
+	OR = {
+		AND = {
+			lsm_rb_is_britain = yes
+			lsm_rb_britain_has_lake_interest = yes
+		}
+		AND = {
+			OR = {
+				lsm_rb_is_canada = yes
+				has_variable = lsm_rb_canadian_successor
+			}
+			any_scope_state = { lsm_rb_is_lakeside_state = yes }
+		}
+	}
+}
+
+lsm_rb_is_southern_member = {
+	is_country_alive = yes
+	NOR = { is_revolutionary = yes is_secessionist = yes }
+	OR = {
+		lsm_rb_is_usa = yes
+		AND = {
+			is_subject_of = c:USA
+			any_scope_state = { lsm_rb_is_lakeside_state = yes }
+		}
+	}
+}
+
+lsm_rb_is_northern_member = {
+	is_country_alive = yes
+	NOR = { is_revolutionary = yes is_secessionist = yes lsm_rb_is_usa = yes }
+	OR = {
+		lsm_rb_is_northern_principal = yes
+		AND = {
+			is_subject = yes
+			any_scope_state = { lsm_rb_is_lakeside_state = yes }
+			top_overlord = { lsm_rb_is_northern_principal = yes }
+		}
+	}
+}
+
+lsm_rb_is_participant = {
+	OR = {
+		lsm_rb_is_southern_member = yes
+		lsm_rb_is_northern_member = yes
+	}
+}
+
+lsm_rb_is_principal = {
+	OR = {
+		AND = { lsm_rb_is_usa = yes is_country_alive = yes is_subject = no }
+		lsm_rb_is_northern_principal = yes
+	}
+}
+
+# ANY scope. Only wars with treaty parties on OPPOSITE sides qualify.
+# PREV in the inner iterator is the northern country, not the calling country.
+lsm_rb_parties_at_war = {
+	any_country = {
+		lsm_rb_is_northern_member = yes
+		any_country = {
+			lsm_rb_is_southern_member = yes
+			has_war_with = prev
+		}
+	}
+}
+
+# ANY scope. USA and at least one independent northern signatory must exist.
+lsm_rb_parties_exist = {
+	any_country = { lsm_rb_is_usa = yes is_country_alive = yes is_subject = no }
+	any_country = { lsm_rb_is_northern_principal = yes }
+}
+
+# ANY scope. Global state: 1=in force, 2=notice, 3=war suspension, 4=lapsed.
+lsm_rb_treaty_in_force = {
+	has_global_variable = lsm_rb_state
+	OR = { global_var:lsm_rb_state = 1 global_var:lsm_rb_state = 2 }
+	lsm_rb_parties_exist = yes
+	lsm_rb_parties_at_war = no
+}
+
+# COUNTRY scope. Existing naval bases are NEVER silently deleted.
+lsm_rb_has_lake_bases = {
+	any_scope_state = {
+		lsm_rb_is_restricted_state = yes
+		any_scope_building = { is_building_type = building_naval_base level > 0 }
+	}
+}
+
+# ANY scope. This excludes unrelated owners and Atlantic mixed-coast states.
+lsm_rb_any_party_has_lake_bases = {
+	any_country = { lsm_rb_is_participant = yes lsm_rb_has_lake_bases = yes }
+}
+
+lsm_rb_relations_allow_withdrawal = {
+	OR = {
+		AND = {
+			lsm_rb_is_usa = yes
+			any_country = {
+				lsm_rb_is_northern_principal = yes
+				relations:c:USA <= -50
+			}
+		}
+		AND = {
+			lsm_rb_is_northern_principal = yes
+			relations:c:USA <= -50
+		}
+	}
+}
+
+lsm_rb_relations_allow_renewal = {
+	OR = {
+		AND = {
+			lsm_rb_is_usa = yes
+			NOT = {
+				any_country = {
+					lsm_rb_is_northern_principal = yes
+					relations:c:USA < 0
+				}
+			}
+		}
+		AND = {
+			lsm_rb_is_northern_principal = yes
+			relations:c:USA >= 0
+		}
+	}
+}
+
+lsm_rb_can_give_notice = {
+	lsm_rb_is_principal = yes
+	has_global_variable = lsm_rb_state
+	global_var:lsm_rb_state = 1
+	lsm_rb_treaty_in_force = yes
+	lsm_rb_relations_allow_withdrawal = yes
+}
+
+# Consent is invalidated if these conditions cease to hold. Separate from
+# can_offer_renewal so an existing vote does not invalidate itself.
+lsm_rb_can_negotiate = {
+	lsm_rb_is_principal = yes
+	has_global_variable = lsm_rb_state
+	global_var:lsm_rb_state = 4
+	lsm_rb_parties_exist = yes
+	lsm_rb_parties_at_war = no
+	lsm_rb_relations_allow_renewal = yes
+	lsm_rb_any_party_has_lake_bases = no
+}
+
+lsm_rb_can_offer_renewal = {
+	lsm_rb_can_negotiate = yes
+	NOT = { has_variable = lsm_rb_renewal_consent }
+}
+
+# ANY scope. For the usual USA/GBR situation this requires two separate votes.
+# If Canada is independent while Britain retains a lakeside colony, all three
+# must agree. A constitutional change cannot substitute one party's vote.
+lsm_rb_all_principals_consent = {
+	lsm_rb_parties_exist = yes
+	NOT = {
+		any_country = {
+			lsm_rb_is_principal = yes
+			NOT = { has_variable = lsm_rb_renewal_consent }
+		}
+	}
+}

@@ -1,0 +1,128 @@
+namespace = lsm_rush_bagot
+
+# Informational only: acknowledgement cannot mutate a later treaty state.
+lsm_rush_bagot.1 = {
+	type = country_event
+	placement = root
+	duration = 3
+	title = lsm_rush_bagot.1.t
+	desc = lsm_rush_bagot.1.d
+	flavor = lsm_rush_bagot.1.f
+	event_image = { video = "unspecific_steam_ship" }
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	option = {
+		name = lsm_rush_bagot.1.a
+		default_option = yes
+	}
+}
+
+# Informational only: acknowledgement cannot mutate a later treaty state.
+lsm_rush_bagot.2 = {
+	type = country_event
+	placement = root
+	duration = 3
+	title = lsm_rush_bagot.2.t
+	desc = lsm_rush_bagot.2.d
+	flavor = lsm_rush_bagot.2.f
+	event_image = { video = "unspecific_steam_ship" }
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	option = {
+		name = lsm_rush_bagot.2.a
+		default_option = yes
+	}
+}
+
+# Informational only: acknowledgement cannot mutate a later treaty state.
+lsm_rush_bagot.3 = {
+	type = country_event
+	placement = root
+	duration = 3
+	title = lsm_rush_bagot.3.t
+	desc = lsm_rush_bagot.3.d
+	flavor = lsm_rush_bagot.3.f
+	event_image = { video = "unspecific_steam_ship" }
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	option = {
+		name = lsm_rush_bagot.3.a
+		default_option = yes
+	}
+}
+
+# Informational only: acknowledgement cannot mutate a later treaty state.
+lsm_rush_bagot.4 = {
+	type = country_event
+	placement = root
+	duration = 3
+	title = lsm_rush_bagot.4.t
+	desc = lsm_rush_bagot.4.d
+	flavor = lsm_rush_bagot.4.f
+	event_image = { video = "unspecific_steam_ship" }
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	option = {
+		name = lsm_rush_bagot.4.a
+		default_option = yes
+	}
+}
+
+# Informational only: acknowledgement cannot mutate a later treaty state.
+lsm_rush_bagot.5 = {
+	type = country_event
+	placement = root
+	duration = 3
+	title = lsm_rush_bagot.5.t
+	desc = lsm_rush_bagot.5.d
+	flavor = lsm_rush_bagot.5.f
+	event_image = { video = "unspecific_steam_ship" }
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	option = {
+		name = lsm_rush_bagot.5.a
+		default_option = yes
+	}
+}
+
+# Informational only: acknowledgement cannot mutate a later treaty state.
+lsm_rush_bagot.6 = {
+	type = country_event
+	placement = root
+	duration = 3
+	title = lsm_rush_bagot.6.t
+	desc = lsm_rush_bagot.6.d
+	flavor = lsm_rush_bagot.6.f
+	event_image = { video = "unspecific_steam_ship" }
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	option = {
+		name = lsm_rush_bagot.6.a
+		default_option = yes
+	}
+}
+
+# Informational only: acknowledgement cannot mutate a later treaty state.
+lsm_rush_bagot.7 = {
+	type = country_event
+	placement = root
+	duration = 3
+	title = lsm_rush_bagot.7.t
+	desc = lsm_rush_bagot.7.d
+	flavor = lsm_rush_bagot.7.f
+	event_image = { video = "unspecific_steam_ship" }
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	option = {
+		name = lsm_rush_bagot.7.a
+		default_option = yes
+	}
+}
+
+# Safe diagnostic: run `event lsm_rush_bagot.99` while playing any country.
+# Reconciles the real current situation; it does NOT force a treaty state.
+lsm_rush_bagot.99 = {
+	type = country_event
+	hidden = yes
+	immediate = { lsm_rb_tick = yes }
+}

@@ -1,0 +1,11 @@
+﻿INJECT:strata_commoners_peasants = {
+	allowed_professions = {
+		sailors
+	}
+}
+
+INJECT:strata_commoners_townspeople = {
+	allowed_professions = {
+		longshoremen
+	}
+}

@@ -1,0 +1,39 @@
+building_welland_canal = {
+	building_group = bg_canals
+	icon = "gfx/interface/icons/building_icons/suez_canal.dds"
+	strait = canal_welland
+	expandable = no
+	downsizeable = no
+	unique = yes
+	required_construction = construction_cost_canal
+
+	ai_value = 100000 # Canals are very important
+
+	unlocking_technologies = {
+		modern_sewerage
+	}
+
+	potential = {
+		state_region = s:STATE_ONTARIO
+	}
+
+	possible = {
+		always = yes
+	}
+
+	entity_not_constructed = { }
+	entity_under_construction = { "canal_suezcanal_under_construction_01_entity" }
+	entity_constructed = { "canal_suezcanal_01_entity" }
+	locator = "canal_welland_locator"
+
+	city_gfx_interactions = {
+		clear_collision_mesh_area = yes
+		clear_size_area = no
+	}
+
+	production_method_groups = {
+		pmg_canal
+	}
+
+	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_harbour.dds"
+}

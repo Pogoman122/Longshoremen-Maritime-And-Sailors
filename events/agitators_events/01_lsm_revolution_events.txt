@@ -1,0 +1,92 @@
+﻿namespace = revolution_pulse1_events
+
+# Sailors Stay Ashore
+revolution_pulse1_events.8 = {
+	type = country_event
+	placement = scope:coastal_navy_state
+	event_image = {
+		video = "votp_gunboat_diplomacy"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
+
+	cooldown = { days = very_long_modifier_time }
+
+	title = revolution_pulse1_events.8.t
+	desc = revolution_pulse1_events.8.d
+	flavor = revolution_pulse1_events.8.f
+
+	category = revolution
+
+	duration = 3
+
+	trigger = {
+		NOT = { has_variable = revolution_event_cooldown }
+		any_revolution_ongoing = yes
+		is_at_war = yes
+		any_scope_state = {
+			is_coastal = yes
+			is_incorporated = yes
+		}
+		any_interest_group = {
+			is_insurrectionary = yes
+		}
+	}
+
+	cancellation_trigger = {
+		NOT = { any_revolution_ongoing = yes }
+	}
+
+	immediate = {
+		random_civil_war = {
+			limit = {
+				is_civil_war_type = revolution
+			}
+			civil_war_save_scopes = yes
+		}
+		random_scope_state = {
+			limit = {
+				is_coastal = yes
+				is_incorporated = yes
+			}
+			save_scope_as = coastal_navy_state
+		}
+		set_variable = { name = revolution_event_cooldown days = 30 }
+	}
+
+	option = { # Detain the men at port
+		name = revolution_pulse1_events.8.a
+		default_option = yes
+
+		scope:coastal_navy_state = {
+			add_loyalists_in_state = {
+				pop_type = officers
+				value = medium_radicals
+			}
+			add_radicals_in_state = {
+				pop_type = sailors
+				value = very_large_radicals
+			}
+		}
+	}
+
+	option = { # Force the men onto the ships
+		name = revolution_pulse1_events.8.b
+
+		add_radicals = {
+			pop_type = sailors
+			value = medium_radicals
+		}
+	}
+
+	option = { # Let the men stay at port in peace
+		name = revolution_pulse1_events.8.c
+
+		add_radicals = {
+			pop_type = officers
+			value = medium_radicals
+		}
+	}
+}
