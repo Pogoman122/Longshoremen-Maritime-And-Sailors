@@ -1,0 +1,101 @@
+﻿je_welland_canal = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	group = je_group_technology
+	is_shown_when_inactive = {
+		OR = {
+			this = c:GBR
+			this = c:ONT
+		}
+		NOT = {
+			has_global_variable = welland_canal_complete
+		}
+	}
+	possible = {
+		has_technology_researched = modern_sewerage
+
+		NOT = {
+			has_global_variable = welland_canal_complete
+		}
+		s:STATE_ONTARIO = {
+			any_scope_state = {
+				NOT = {
+					has_building = building_welland_canal
+				}
+			}
+		}
+	}
+	can_deactivate = no
+	scripted_button = lsm_begin_welland_canal
+	is_progressing = {
+		has_variable = welland_canal_project_started
+	}
+
+	progressbar = yes
+	current_value = {
+		value = var:welland_canal_progress
+	}
+	goal_add_value = {
+		value = 417
+	}
+	progress_desc = je_welland_canal_progress
+	complete = {
+	s:STATE_ONTARIO = {
+		region_state:ONT = {
+			any_scope_building = {
+				is_building_type = building_welland_canal
+			}
+		}
+	}
+}
+	on_weekly_pulse = {
+		effect = {
+			if = {
+				limit = {
+					has_variable = welland_canal_project_started
+					var:welland_canal_progress < 417
+				}
+				add_treasury = -5000
+
+				change_variable = {
+					name = welland_canal_progress
+					add = 1
+				}
+			}
+			if = {
+	limit = {
+		has_variable = welland_canal_project_started
+		var:welland_canal_progress >= 417
+	}
+	s:STATE_ONTARIO = {
+	region_state:ONT = {
+		set_variable = {
+			name = welland_canal_project_active
+			value = 1
+		}
+	}
+}
+			s:STATE_ONTARIO = {
+				region_state:ONT = {
+				create_building = {
+				building = building_welland_canal
+				level = 1
+		}
+	}
+}
+	on_complete = {
+		set_global_variable = welland_canal_complete
+		remove_global_variable = welland_canal_under_construction
+		remove_variable = welland_canal_project_started
+		remove_variable = welland_canal_progress
+
+		s:STATE_ONTARIO = {
+			every_scope_state = {
+				remove_variable = welland_canal_project_active
+			}
+		}
+		trigger_event = { id = lsm_canal_events.1 }
+	}
+		
+}
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

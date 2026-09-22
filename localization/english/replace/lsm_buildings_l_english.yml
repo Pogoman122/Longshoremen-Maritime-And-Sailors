@@ -1,6 +1,7 @@
 ﻿l_english:
  building_government_lighthouse:0 "Lighthouse"
  bg_lighthouse: "Lighthouses"
+ lsm_lighthouse_can_construct_tt: "Construstion of $building_government_lighthouse$ is available."
  canal_welland: "Welland Canal"
  building_welland_canal:0 "Welland Canal"
  building_welland_canal_lens_option:0 "Construct $building_welland_canal$"

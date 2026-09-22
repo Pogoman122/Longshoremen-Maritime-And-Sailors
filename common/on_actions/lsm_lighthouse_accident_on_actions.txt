@@ -1,6 +1,4 @@
-﻿# Attach a separate event pool to the annual country pulse.
-# This is an on-action extension, so no INJECT/REPLACE prefix is used.
-on_yearly_pulse_country = {
+﻿on_yearly_pulse_country = {
     on_actions = {
         lsm_lighthouse_accident_yearly
     }
@@ -10,6 +8,6 @@ lsm_lighthouse_accident_yearly = {
     random_events = {
         # When eligible: 90% no event, 10% accident per annual check.
         90 = 0
-        10 = lsm_lighthouse_accident.1
+        10 = lsm_events.1
     }
 }

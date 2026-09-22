@@ -1,0 +1,21 @@
+﻿namespace = lsm_canal_events
+
+	lsm_canal_events.1 = {
+		type = country_event
+		popup = yes
+		placement = root
+
+		title = lsm_canal_events.1.t
+		desc = lsm_canal_events.1.d
+		flavor = lsm_canal_events.1.f
+		event_image = { video = "unspecific_steam_ship" }
+		icon = "gfx/interface/icons/event_icons/event_map.dds"
+		on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+		option = {
+			name = lsm_canal_events.1.a
+			default_option = yes
+
+			add_prestige = 50
+	}
+}

@@ -1,0 +1,15 @@
+﻿# Ties into lsm_ai_construction_effects found in scripted_effects.
+# Ai weights do nothing. They won't build custom buildings unless you force them to.
+# Really fucking annyoing.
+
+on_yearly_pulse_country = {
+	on_actions = {
+		lsm_ai_lighthouse_on_action
+	}
+}
+
+lsm_ai_lighthouse_on_action = {
+	effect = {
+		lsm_ai_construct_lighthouse = yes
+	}
+}

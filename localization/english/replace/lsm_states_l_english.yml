@@ -1,7 +1,8 @@
 ﻿l_english:
  STATE_LAKE_SUPERIOR: "Lake Superior"
  STATE_LAKE_MICHIGAN: "Lake Michigan"
- STATE_LAKE_ONTARIO: "Lake Ontario"
+ STATE_LAKE_ONTARIO: "Lake Huron"
  STATE_LAKE_ERIE: "Lake Erie"
- STATE_LAKE_HURON: "Lake Huron"
+ STATE_LAKE_HURON: "Lake Ontario"
  region_great_lakes: "Great Lakes"
+ region_midwest: "Midwest"

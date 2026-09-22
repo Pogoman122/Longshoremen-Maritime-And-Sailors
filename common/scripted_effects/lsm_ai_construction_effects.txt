@@ -1,0 +1,23 @@
+﻿# OH MY GOD PLEASE FOR THE LOVE OF ALL THAT IS HOLY WORK
+
+lsm_ai_construct_lighthouse = {
+
+	if = {
+		limit = {
+			is_ai = yes
+			has_technology_researched = navigation
+		}
+
+		random_scope_state = {
+			limit = {
+				is_coastal = yes
+				can_construct_building = building_government_lighthouse
+			}
+
+			create_building = {
+				building = building_government_lighthouse
+				level = 1
+			}
+		}
+	}
+}

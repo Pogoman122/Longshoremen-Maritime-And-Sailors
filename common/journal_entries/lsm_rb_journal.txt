@@ -12,8 +12,6 @@ lsm_je_rush_bagot = {
 	possible = { lsm_rb_is_participant = yes }
 	immediate = { lsm_rb_tick = yes }
 
-	# This is a standing diplomatic arrangement, not a one-shot reward JE.
-	# A sole USA pulse prevents every subject from repeating global work.
 	on_weekly_pulse = {
 		effect = {
 			if = { limit = { lsm_rb_is_usa = yes } lsm_rb_tick = yes }

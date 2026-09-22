@@ -1,4 +1,4 @@
-lsm_rb_notice_button = {
+﻿lsm_rb_notice_button = {
 	name = lsm_rb_notice_button_name
 	desc = lsm_rb_notice_button_desc
 	visible = {
@@ -12,18 +12,6 @@ lsm_rb_notice_button = {
 	effect = {
 		custom_tooltip = lsm_rb_notice_effect_tt
 		hidden_effect = { lsm_rb_give_notice = yes }
-		every_scope_treaty = {
-            limit = {
-                any_scope_article = {
-                    has_type = rush_bagot_treaty_article
-                }
-            }
-            withdraw = {
-                country = root
-                apply_break_penalties = no
-            }
-        }
-		
 	}
 	cooldown = { months = 12 }
 	ai_chance = { value = 1 }
@@ -38,7 +26,7 @@ lsm_rb_renewal_button = {
 		OR = { global_var:lsm_rb_state = 3 global_var:lsm_rb_state = 4 }
 	}
 	possible = {
-		custom_tooltip = { text = lsm_rb_renewal_requirements_tt lsm_rb_can_offer_renewal = yes }
+		lsm_rb_can_offer_renewal = yes
 	}
 	effect = {
 		custom_tooltip = lsm_rb_renewal_effect_tt

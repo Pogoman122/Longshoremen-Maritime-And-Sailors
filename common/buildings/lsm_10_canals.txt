@@ -1,5 +1,6 @@
 building_welland_canal = {
 	building_group = bg_canals
+	ownership_type = self
 	icon = "gfx/interface/icons/building_icons/suez_canal.dds"
 	strait = canal_welland
 	expandable = no
@@ -9,9 +10,15 @@ building_welland_canal = {
 
 	ai_value = 100000 # Canals are very important
 
-	unlocking_technologies = {
-		modern_sewerage
+	possible = {
+	OR = {
+
+		owner = {
+			has_technology_researched = modern_sewerage
+		}
+		has_variable = welland_canal_project_active
 	}
+}
 
 	potential = {
 		state_region = s:STATE_ONTARIO
@@ -19,6 +26,14 @@ building_welland_canal = {
 
 	possible = {
 		always = yes
+	}
+	
+	can_build_government = {
+        always = yes
+    }
+	
+	can_build_private = {
+    always = yes
 	}
 
 	entity_not_constructed = { }

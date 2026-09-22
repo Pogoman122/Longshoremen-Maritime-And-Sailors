@@ -1,8 +1,9 @@
 ﻿bg_lighthouse = {
 	category = development
+	parent_group = bg_infrastructure
 
 	always_possible = yes
-
+	
 	is_government_funded = yes
 
 	lens = development
@@ -12,4 +13,4 @@
 
 	construction_efficiency_modifier = yes
 }
-}
+

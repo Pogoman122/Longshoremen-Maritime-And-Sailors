@@ -1,0 +1,68 @@
+﻿lsm_begin_welland_canal = {
+
+	name = "lsm_begin_welland_canal_button"
+	desc = "lsm_begin_welland_canal_button_desc"
+
+	visible = {
+		NOT = {
+			has_variable = welland_canal_project_started
+		}
+	}
+
+	possible = {
+		has_technology_researched = modern_sewerage
+
+		NOT = {
+			has_global_variable = welland_canal_under_construction
+		}
+
+		NOT = {
+			has_global_variable = welland_canal_complete
+		}
+
+		s:STATE_ONTARIO = {
+			any_scope_state = {
+				NOT = {
+					has_building = building_welland_canal
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 100
+	}
+
+	effect = {
+
+		set_global_variable = welland_canal_under_construction
+
+		set_variable = {
+			name = welland_canal_project_started
+			value = 1
+		}
+
+		set_variable = {
+			name = welland_canal_progress
+			value = 0
+		}
+
+		#
+		# Mark the actual Ontario state.
+		#
+		s:STATE_ONTARIO = {
+			random_scope_state = {
+				limit = {
+					NOT = {
+						has_building = building_welland_canal
+					}
+				}
+
+				set_variable = {
+					name = welland_canal_project_active
+					value = 1
+				}
+			}
+		}
+	}
+}

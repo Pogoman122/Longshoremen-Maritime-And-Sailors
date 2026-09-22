@@ -1,5 +1,3 @@
-# STATE scope. Adjust these lists to match LSM's actual port locations.
-# The wider shoreline list determines diplomatic participation only.
 lsm_rb_is_lakeside_state = {
 	OR = {
 		state_region = s:STATE_ONTARIO
@@ -10,10 +8,6 @@ lsm_rb_is_lakeside_state = {
 	}
 }
 
-# STATE scope. Conservative defaults: do not shut New York, Philadelphia,
-# or Quebec's Atlantic/St. Lawrence naval facilities through a state-wide cap.
-# Add those states here ONLY if their naval-base location is actually on a lake.
-# Vanilla has no separate Lake Champlain state; no blanket Vermont/NY ban.
 lsm_rb_is_restricted_state = {
 	OR = {
 		state_region = s:STATE_ONTARIO
@@ -26,7 +20,6 @@ lsm_rb_is_restricted_state = {
 	}
 }
 
-# STATE scope. Optional exact construction gate; see docs/INTEGRATION.md.
 lsm_rb_state_is_demilitarized = {
 	lsm_rb_is_restricted_state = yes
 	lsm_rb_treaty_in_force = yes

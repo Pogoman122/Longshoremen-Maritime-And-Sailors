@@ -3,7 +3,8 @@
 	building_group = bg_lighthouse
 	city_type = port
 	levels_per_mesh = 1
-
+	economy_of_scale_ai_factor = 5
+	ai_subsidies_weight = 5
 	expandable = no
 
 	downsizeable = no
@@ -25,11 +26,23 @@
 
 	icon = "gfx/interface/icons/building_icons/lighthouse.dds"
 
-	can_build_private = {
-		always = no
+	can_build_government = {
+		custom_tooltip = {
+			text = lsm_lighthouse_can_construct_tt
+			NOT = {
+				b:building_government_lighthouse ?= {
+					level_after_queued_constructions >= {
+						value = 1							# Ensures always 1 level is buildable
+							}
+						}
+					}
+				}
+			}
+
+	ai_value = {
+		value = 8000
 	}
 
-	ai_value = 50000
 
 	background = "gfx/interface/icons/building_icons/backgrounds/building_panel_bg_harbour.dds"
 }
