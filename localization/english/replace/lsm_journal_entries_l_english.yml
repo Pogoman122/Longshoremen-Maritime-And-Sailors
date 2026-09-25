@@ -61,7 +61,7 @@
  je_welland_canal:0 "Construction of the Welland Canal"
  je_welland_canal_reason:0 "A canal bypassing Niagara Falls would establish a navigable connection between Lake Ontario and Lake Erie. The undertaking will require considerable public expenditure and years of engineering work."
  lsm_begin_welland_canal_button:0 "Begin Construction"
- lsm_begin_welland_canal_button_des c:0 "Begin construction of the Welland Canal. The project will cost £5,000 each week for approximately eight years."
+ lsm_begin_welland_canal_button_desc:0 "Begin construction of the Welland Canal. The project will cost £5,000 each week for approximately eight years."
  je_welland_canal_construction:0 "Construction of the Welland Canal"
  je_welland_canal_construction_reason:0 "Work is underway on a canal linking Lake Ontario and Lake Erie while bypassing Niagara Falls."
  je_welland_canal_progress:0 "Planning and construction of the Welland Canal is estimated to take up to eight years to complete."

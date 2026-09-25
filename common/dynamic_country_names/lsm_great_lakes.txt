@@ -1,0 +1,128 @@
+﻿GLR = {
+
+	# Vanguard State
+	dynamic_country_name = {
+		name = dyn_c_glr_communist
+		adjective = dyn_c_glr_communist_adj
+		is_main_tag_only = yes
+	
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				has_law_or_variant = law_type:law_council_republic
+				has_law_or_variant = law_type:law_single_party_state
+			}
+		}
+	}
+	
+	# Socialist Republic
+	dynamic_country_name = {
+		name = dyn_c_glr_socialist
+		adjective = dyn_c_glr_socialist_adj
+		is_main_tag_only = yes
+	
+		  trigger = {
+        coa_def_socialist_flag_trigger = yes
+            
+		}
+	}
+	
+
+	# Fascist State
+	dynamic_country_name = {
+		name = dyn_c_glr_fascist
+		adjective = dyn_c_glr_fascist_adj
+		is_main_tag_only = yes
+		
+
+		trigger = {
+			coa_def_fascist_flag_trigger = yes
+		}
+	}
+
+	# Monarchy
+	dynamic_country_name = {
+		name = dyn_c_glr_monarchy
+		adjective = dyn_c_glr_monarchy_adj
+		is_main_tag_only = yes
+		
+
+		trigger = {
+			coa_def_monarchy_flag_trigger = yes
+		}
+	}
+	
+	# Nihilist
+	dynamic_country_name = {
+		name = dyn_c_glr_nihilist
+		adjective = dyn_c_glr_nihilist_adj
+		is_main_tag_only = yes
+		
+		
+		trigger = {
+			coa_def_nihilist_flag_trigger = yes
+		}
+	}
+	
+	# Theocracy
+	dynamic_country_name = {
+		name = dyn_c_glr_theocracy
+		adjective = dyn_c_glr_theocracy_adj
+		is_main_tag_only = yes
+		
+		
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				has_law_or_variant = law_type:law_theocracy
+			}
+		}
+	}
+	
+	# Technocrat
+	dynamic_country_name = {
+		name = dyn_c_glr_technate
+		adjective = dyn_c_glr_technate_adj
+
+		is_main_tag_only = yes
+		
+
+		trigger = {
+			coa_def_technate_flag_trigger = yes
+			
+			scope:actor ?= {
+				has_law_or_variant = law_type:law_technocracy
+			}	
+		}
+	}
+		
+	
+	# Anarchist
+	dynamic_country_name = {
+		name = dyn_c_glr_anarchist
+		adjective = dyn_c_glr_anarchist_adj
+		is_main_tag_only = yes
+		
+		
+		trigger = {
+			coa_def_anarchy_flag_trigger = yes
+			scope:actor ?= {
+				has_law_or_variant = law_type:law_anarchy
+			}
+		}
+	}
+	
+	# Cybercommunist assholes
+	dynamic_country_name = {
+		name = dyn_c_glr_cybercommunist
+		adjective = dyn_c_glr_cybercommunist_adj
+		is_main_tag_only = yes
+		
+		 trigger = {
+			scope:actor ?= {
+				has_law = law_type:law_council_republic
+				has_law = law_type:law_technocracy
+			}
+		}
+	}
+}

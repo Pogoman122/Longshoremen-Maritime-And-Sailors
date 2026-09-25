@@ -1,0 +1,11 @@
+﻿GLR = {
+	states = {
+		STATE_MINNESOTA
+		STATE_ILLINOIS
+		STATE_WISCONSIN
+		STATE_INDIANA
+		STATE_MICHIGAN
+		STATE_OHIO
+	}
+	ai_will_do = { always = no }
+}

@@ -5,12 +5,6 @@
 		navigation
 	}
 
-	country_modifiers = {
-		workforce_scaled = {
-			country_weekly_innovation_add = .001
-		}
-	}
-
 	state_modifiers = {
 		workforce_scaled = {
 			state_trade_advantage_mult = 0.05

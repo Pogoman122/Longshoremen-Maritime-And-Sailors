@@ -1,0 +1,6 @@
+﻿INJECT_OR_CREATE:colors = {
+    glr_communist_red = hsv360{ 347 93 35 }
+	glr_anarchist_red = hsv360{ 360 82 55 }
+	glr_socialist_red = hsv360{ 346 100 63 }
+	glr_theocracy = hsv360{ 280 46 89 }
+}

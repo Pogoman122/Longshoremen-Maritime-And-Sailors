@@ -1,0 +1,10 @@
+﻿GLR = {
+	color = { 211 94 2 }
+
+	country_type = recognized
+
+	tier = kingdom
+
+	cultures = { yankee anglo_canadian }
+	capital = STATE_ILLINOIS
+}

@@ -1,4 +1,4 @@
-# This lowers the standard naval-base cap below zero. It does not delete
+﻿# This lowers the standard naval-base cap below zero. It does not delete
 # existing bases, stop queued construction, or restrict fleet movement.
 # See docs/INTEGRATION.md for an optional building possible={} gate.
 lsm_rb_naval_restrictions = {

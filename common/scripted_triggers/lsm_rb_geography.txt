@@ -1,4 +1,4 @@
-lsm_rb_is_lakeside_state = {
+﻿lsm_rb_is_lakeside_state = {
 	OR = {
 		state_region = s:STATE_ONTARIO
 		state_region = s:STATE_QUEBEC

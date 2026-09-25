@@ -196,7 +196,9 @@
 					is_pop_type = longshoremen
 				}
 				value = 200
-
+				}
+			}
+			
 		add = {
 			desc = "POP_CLERKS"
 			if = {
@@ -205,9 +207,9 @@
 				}
 				value = 35
 				subtract = standard_of_living
+				}
 			}
-		}
-
+	
 		add = {
 			desc = "CONSCRIPTS"
 			if = {

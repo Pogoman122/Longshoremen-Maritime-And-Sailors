@@ -40,7 +40,7 @@ STATE_ILLINOIS = {
         building_coal_mine = 60
         building_lead_mine = 90
         building_logging_camp = 22
-		building_fishing_wharf = 5
+        building_fishing_wharf = 5
     }
     naval_exit_id = 3332
 }
@@ -61,7 +61,7 @@ STATE_MICHIGAN = {
         building_iron_mine = 60
         building_sulfur_mine = 32
         building_logging_camp = 50
-		building_fishing_wharf = 20
+        building_fishing_wharf = 20
     }
     naval_exit_id = 3332
 }
@@ -82,7 +82,7 @@ STATE_OHIO = {
         building_coal_mine = 60
         building_lead_mine = 36
         building_logging_camp = 30
-		building_fishing_wharf = 6
+        building_fishing_wharf = 6
     }
     resource = {
         type = "building_oil_rig"
@@ -95,7 +95,7 @@ STATE_WISCONSIN = {
     id = 285
     subsistence_building = "building_subsistence_farm"
     provinces = { "x049BAB" "x092B18" "x0F38D4" "x16E7BF" "x24883A" "x397AA3" "x39FC40" "x3C47F9" "x3E0D88" "x3E86B7" "x49B5A8" "x4A71CA" "x4B51EB" "x520EFD" "x52A5FD" "x5816B1" "x5FE739" "x618762" "x657999" "x68A47D" "x779B77" "x794B5B" "x80A0C0" "x887276" "x89F507" "x900040" "x941A5A" "x9C97B2" "x9F4495" "xA5C179" "xA6AF2F" "xAA87FB" "xAFF4FA" "xBFF7BC" "xCB7277" "xD04040" "xD0C040" "xD5A704" "xE2A342" "xE3903C" "xE49CB0" "xE6D0B8" "xEB502A" "xEF4297" "xF54CF0" "xF57B6E" "xF6BC89" }
-    traits = { "state_trait_great_lakes"}
+    traits = { "state_trait_great_lakes" }
     city = "xD0C040"
     farm = "x900040"
     mine = "xD04040"
@@ -107,7 +107,7 @@ STATE_WISCONSIN = {
         building_iron_mine = 24
         building_sulfur_mine = 32
         building_logging_camp = 35
-		building_fishing_wharf = 17
+        building_fishing_wharf = 17
     }
     naval_exit_id = 3332
 }
@@ -116,7 +116,7 @@ STATE_MINNESOTA = {
     id = 284
     subsistence_building = "building_subsistence_farm"
     provinces = { "x00A0C0" "x03F3AE" "x096804" "x0FAD27" "x1000C0" "x108319" "x108E46" "x1B5ADB" "x1B5B1A" "x1B6243" "x1DF928" "x1E5DFD" "x21D67D" "x27DB3F" "x28022C" "x282692" "x289431" "x29243C" "x2E8F99" "x2F06FA" "x36ECCB" "x373F2F" "x450FD3" "x45FBF5" "x46F177" "x4DCFD1" "x4FFFFC" "x54C77A" "x57556B" "x59C9CA" "x5A4A79" "x5CFCFE" "x5D35AB" "x5E307F" "x658093" "x6AD1DD" "x70957E" "x71C380" "x7388CD" "x7B3020" "x8334D0" "x84B824" "x85D457" "x865EB8" "x8D5116" "x929D22" "x9A9297" "x9D934A" "xA8B1F6" "xAB7F2A" "xBDF621" "xBE054B" "xC2D863" "xC5E30A" "xCC4DE2" "xCCC204" "xCDECF0" "xD06D27" "xD0C080" "xDE887C" "xDEFE70" "xDF2B35" "xDFFB08" "xE3F82F" "xE649BF" "xE7EF56" "xECA010" "xEE7CFB" "xF09A2C" "xF3CD0C" "xFBB91E" "xFF83EB" }
-    traits = { "state_trait_mississippi_river" "state_trait_great_lakes"  }
+    traits = { "state_trait_mississippi_river" "state_trait_great_lakes" }
     city = "x9A9297"
     farm = "xCCC204"
     mine = "x658093"
@@ -128,7 +128,7 @@ STATE_MINNESOTA = {
         building_iron_mine = 45
         building_sulfur_mine = 40
         building_logging_camp = 40
-		building_fishing_wharf = 4
+        building_fishing_wharf = 4
     }
     naval_exit_id = 3331
 }
@@ -137,7 +137,7 @@ STATE_INDIANA = {
     id = 286
     subsistence_building = "building_subsistence_farm"
     provinces = { "x005339" "x26B0DF" "x27EF03" "x285A9A" "x2A554C" "x30D889" "x4BAF24" "x5DA55B" "x708040" "x71AF12" "x73BE17" "x886CA2" "x89D198" "x9977A5" "x9CE5F6" "xC02000" "xC72917" "xC9A306" "xE12B89" "xE236DD" "xE2E68F" "xE36812" "xED4D2B" "xF04080" "xF13865" }
-	traits = { "state_trait_great_lakes" "state_trait_ohio_river"  }
+    traits = { "state_trait_great_lakes" "state_trait_ohio_river" }
     city = "x26B0DF"
     farm = "x30D889"
     mine = "x708040"
@@ -148,7 +148,7 @@ STATE_INDIANA = {
     capped_resources = {
         building_coal_mine = 48
         building_logging_camp = 28
-		building_fishing_wharf = 3
+        building_fishing_wharf = 3
     }
     naval_exit_id = 3332
 }
@@ -169,7 +169,7 @@ STATE_PENNSYLVANIA = {
         building_coal_mine = 120
         building_iron_mine = 57
         building_logging_camp = 23
-		building_fishing_wharf = 2
+        building_fishing_wharf = 2
     }
     resource = {
         type = "building_oil_rig"

@@ -1,4 +1,4 @@
-building_welland_canal = {
+﻿building_welland_canal = {
 	building_group = bg_canals
 	ownership_type = self
 	icon = "gfx/interface/icons/building_icons/suez_canal.dds"

@@ -1,0 +1,72 @@
+INJECT_OR_CREATE:coa_cybercommunist_trigger = {
+	has_law = law_type:law_council_republic
+	has_law = law_type:law_technocracy 
+}
+
+INJECT_OR_CREATE:coa_def_cybercommunist_flag_trigger = {
+	exists = scope:actor
+	scope:actor ?= { coa_cybercommunist_trigger = yes }
+}
+
+INJECT_OR_CREATE:coa_socialist_trigger = {
+    has_law = law_type:law_council_republic
+
+    NOT = {
+        has_law_or_variant = law_type:law_single_party_state
+    }
+
+    NOT = {
+        has_law_or_variant = law_type:law_anarchy
+	}
+	
+	NOT = {
+        has_law_or_variant = law_type:law_technocracy
+    }
+}
+
+INJECT_OR_CREATE:coa_def_socialist_flag_trigger = {
+    exists = scope:actor
+    scope:actor ?= {
+        coa_socialist_trigger = yes
+    }
+}
+
+REPLACE:coa_glr_communist_trigger = {
+    has_law = law_type:law_council_republic
+    has_law = law_type:law_single_party_state
+}
+
+REPLACE:coa_def_glr_communist_flag_trigger = {
+    exists = scope:actor
+    scope:actor ?= {
+        coa_glr_communist_trigger = yes
+    }
+}
+
+
+INJECT_OR_CREATE:coa_def_socialist_flag_trigger = {
+    exists = scope:actor
+    scope:actor ?= {
+        coa_socialist_trigger = yes
+    }
+}
+
+
+INJECT_OR_CREATE:coa_technate_trigger = {
+    has_law = law_type:law_technocracy
+
+    NOT = {
+        has_law_or_variant = law_type:law_council_republic
+    }
+
+    NOT = {
+        has_law_or_variant = law_type:law_anarchy
+    }
+}
+
+INJECT_OR_CREATE:coa_def_technate_flag_trigger = {
+    exists = scope:actor
+    scope:actor ?= {
+        coa_technate_trigger = yes
+    }
+}

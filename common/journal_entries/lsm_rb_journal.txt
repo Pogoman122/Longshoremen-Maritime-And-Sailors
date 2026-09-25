@@ -1,4 +1,4 @@
-lsm_je_rush_bagot = {
+﻿lsm_je_rush_bagot = {
 	group = lsm_rb_journal_group
 	icon = "gfx/interface/icons/event_icons/event_newspaper.dds"
 	weight = 15

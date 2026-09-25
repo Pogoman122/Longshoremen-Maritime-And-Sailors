@@ -8060,21 +8060,6 @@
 		}, {
 			"object_ref":	{
 				"type":	"locator",
-				"key":	"canal_welland_locator"
-			},
-			"entry_state":	{
-				"locked":	false,
-				"base_type":	{
-					"type":	"locator",
-					"key":	"canal_welland_locator"
-				}
-			},
-			"instances":	[{
-					"locked":	false
-				}]
-		}, {
-			"object_ref":	{
-				"type":	"locator",
 				"key":	"capitol_hill_locator"
 			},
 			"entry_state":	{

@@ -1,4 +1,4 @@
-namespace = lsm_rush_bagot
+﻿namespace = lsm_rush_bagot
 
 # Informational only: acknowledgement cannot mutate a later treaty state.
 lsm_rush_bagot.1 = {

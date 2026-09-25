@@ -1,4 +1,4 @@
-# ANY scope. Remember Canada's colonial parties before independence or tag
+﻿# ANY scope. Remember Canada's colonial parties before independence or tag
 # changes, without imposing the agreement on unrelated lakeside countries.
 lsm_rb_record_successors = {
 	every_country = {

@@ -3,8 +3,6 @@
 	building_group = bg_lighthouse
 	city_type = port
 	levels_per_mesh = 1
-	economy_of_scale_ai_factor = 5
-	ai_subsidies_weight = 5
 	expandable = no
 
 	downsizeable = no

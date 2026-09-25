@@ -1,0 +1,47 @@
+﻿GLR_communist = {
+    color = "glr_communist_red"
+
+    possible = {
+        exists = c:GLR
+        this = c:GLR
+		has_law = law_type:law_council_republic
+		has_law = law_type:law_single_party_state
+    }
+}
+
+GLR_anarchist = {
+    color = "glr_anarchist_red"
+
+    possible = {
+        exists = c:GLR
+        this = c:GLR
+		has_law = law_type:law_council_republic
+		has_law = law_type:law_anarchy
+    }
+}
+
+GLR_socialist = {
+    color = "glr_socialist_red"
+
+    possible = {
+        exists = c:GLR
+        this = c:GLR
+		has_law = law_type:law_council_republic
+		NOT = {
+				has_law_or_variant = law_type:law_single_party_state
+			}
+		NOT = {
+				has_law_or_variant = law_type:law_anarchy
+		}
+	}   
+}
+
+GLR_theocracy = {
+    color = "glr_theocracy"
+
+    possible = {
+        exists = c:GLR
+        this = c:GLR
+		has_law = law_type:law_theocracy
+    }
+}

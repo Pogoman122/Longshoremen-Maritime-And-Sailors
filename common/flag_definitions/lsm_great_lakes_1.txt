@@ -1,0 +1,126 @@
+﻿INJECT_OR_CREATE:GLR = {
+
+	# Default
+	flag_definition = {
+		coa = GLR
+		subject_canton = GLR
+		priority = 1
+	}
+
+	# Monarchy
+	flag_definition = {
+		coa = GLR_monarchy
+		subject_canton = GLR_monarchy
+		priority = 100
+		trigger = {
+			coa_def_monarchy_flag_trigger = yes
+		}
+	}
+
+	# Fascism
+	flag_definition = {
+		coa = GLR_fascist
+		subject_canton = GLR_fascist
+		priority = 2100
+		trigger = {
+			coa_def_fascist_flag_trigger = yes
+		}
+	}
+
+	# Vanguard State
+	flag_definition = {
+    coa = GLR_communist
+    subject_canton = GLR_communist
+    priority = 1900
+
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				has_law = law_type:law_council_republic
+				has_law = law_type:law_single_party_state
+			}
+		}
+	}
+
+	# Socialist Republic
+	flag_definition = {
+    coa = GLR_socialist
+    subject_canton = GLR_socialist
+    priority = 1800
+
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+            has_law = law_type:law_council_republic
+
+				NOT = {
+                has_law = law_type:law_single_party_state
+				}
+
+				NOT = {
+                has_law = law_type:law_anarchy
+				}
+				
+				NOT = {
+                has_law = law_type:law_technocracy
+				}
+			}
+		}
+	}
+	# Nihilist 
+	flag_definition = {
+		coa = GLR_nihilist
+		subject_canton = GLR_nihilist
+		priority = 300
+		trigger = {
+			coa_def_nihilist_flag_trigger = yes
+		}
+	}
+	
+	# Theocracy
+	flag_definition = {
+		coa = GLR_theocracy
+		subject_canton = GLR_theocracy
+		priority = 200
+		trigger = {
+			coa_def_theocracy_flag_trigger = yes
+		}
+	}
+	
+	
+	 
+	#Autonomous Socialist States
+	flag_definition = {
+		coa = GLR_cybercommunist
+		subject_canton = GLR_cybercommunist
+		priority = 2200
+		trigger = {
+			coa_def_cybercommunist_flag_trigger = yes
+		}
+	}
+	
+	# Anarchist, this one gave me a massive headache
+	flag_definition = {
+		coa = GLR_anarchist
+		subject_canton = GLR_anarchist
+		priority = 2000
+
+		trigger = {
+			exists = scope:actor
+			scope:actor ?= {
+				has_law = law_type:law_council_republic
+				has_law = law_type:law_anarchy
+			}
+		}
+	}
+	
+	# Technocracy
+	flag_definition = {
+		coa = GLR_technate
+		subject_canton = GLR_technate
+		priority = 2100
+		trigger = {
+			coa_def_technate_flag_trigger = yes
+		}
+	}
+}

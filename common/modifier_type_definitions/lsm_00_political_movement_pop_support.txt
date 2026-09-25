@@ -1,3 +1,5 @@
+﻿# root = political_movement
+
 movement_support_sailors = {
 	name = POP_SAILORS
 }
