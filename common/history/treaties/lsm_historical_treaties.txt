@@ -28,4 +28,47 @@
 			}
 		}
 	}
+
+	create_treaty = {
+		requirement_to_maintain = {
+			NOT = {
+				has_global_variable = hunkar_iskelesi_expired_global_var
+			}
+		}
+		name = TREATY_NAME_HUNKAR_ISKELESI
+		first_country = c:TUR
+		second_country = c:RUS
+		is_draft = no
+		entered_into_force_on = 1833.7.8
+		# this shit is fucking stupid man, it will apply retroactivelt to rush-bagot but not hunkar iskelesi, maybe I did something wrong
+		binding_period = { years = 5 }
+		
+		articles_to_create = {
+		{
+		article = hunkar_iskelesi
+		}
+
+		{
+		article = strait_access
+		source_country = c:TUR
+		target_country = c:RUS
+			}
+		}
+			set_global_variable = hunkar_iskelesi_created_global_var
+			on_withdrawal = {
+				if = {
+					limit = {
+					game_date >= 1841.1.1
+				NOT = {
+					has_global_variable = straits_conference_started_global_var
+					}
+				}
+					c:GBR ?= {
+					trigger_event = {
+					id = straits_question_events.1
+					popup = yes
+				}
+			}
+		}
+	}
 }

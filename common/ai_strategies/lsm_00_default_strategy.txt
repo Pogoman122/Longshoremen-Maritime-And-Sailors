@@ -9031,156 +9031,176 @@ REPLACE:ai_strategy_default = {
 	# scope:second_state = the second state controlling the strait
 	# scope:is_sole_controller = yes/no depending on whether country controls both sides of the strait
 	strait_scores = {
-		status_scores = {
-			open = {
-				value = 0
-			}
-
-			no_military = {
-				value = 10
-			}
-
-			closed = {
-				value = 0
-
-				if = { # Close canals to enemy trade
-					limit = {
-						scope:strait = {
-							OR = {
-								type = strait_type:canal_panama
-								type = strait_type:canal_suez
-							}
-						}
-					}
-
-					add = 100
-				}
+	status_scores = {
+		open = {
+			value = 0
+			# LSM: honor the accepted Straits convention while it remains in force.
+			if = {
+				limit = { lsm_straits_ai_open_policy = yes }
+				add = 10000
 			}
 		}
 
-		permissions_scores = {
-			all = {
-				value = 0
-			}
-
-			no_enemies = {
-				value = 10
-			}
-
-			only_allies = {
-				value = 0
-
-				# Commented out for now as AI is too happy to close straits, we should consider bringing this back later
-				#if = { # Wants to keep competitor navies out
-				#	limit = {
-				#		OR = {
-				#			has_strategy = ai_strategy_colonial_expansion
-				#			has_strategy = ai_strategy_territorial_expansion
-				#		}
-				#	}
-				#
-				#	add = 20
-				#}
-
-				if = { # Don't close off gibraltar
-					limit = {
-						scope:strait = {
-							type = strait_type:strait_gibraltar
-						}
-					}
-
-					multiply = 0
-				}
-			}
-
-			only_controller = {
-				value = 0
+		no_military = {
+			value = 10
+			# LSM: honor the accepted Straits convention while it remains in force.
+			if = {
+				limit = { lsm_straits_ai_closed_policy = yes }
+				add = 10000
 			}
 		}
 
-		toll_rate_scores = {
-			no_tolls = {
-				value = 0
+		closed = {
+			value = 0
 
-				if = {
-					limit = {
-						scope:is_sole_controller = no
+			if = { # Close canals to enemy trade
+				limit = {
+					scope:strait = {
 						OR = {
-							has_strategy = ai_strategy_maintain_power_balance
-							has_strategy = ai_strategy_anti_imperialism
+							type = strait_type:canal_panama
+							type = strait_type:canal_suez
 						}
 					}
-
-					add = 20
-				}
-			}
-
-			low_tolls = {
-				value = 10
-
-				if = {
-					limit = {
-						scope:is_sole_controller = yes
-						OR = {
-							has_strategy = ai_strategy_maintain_power_balance
-							has_strategy = ai_strategy_anti_imperialism
-						}
-					}
-
-					add = 20
-				}
-			}
-
-			medium_tolls = {
-				value = 0
-
-				if = { # "Greed is good"
-					limit = {
-						OR = {
-							has_strategy = ai_strategy_economic_imperialism
-							has_strategy = ai_strategy_colonial_expansion
-						}
-					}
-
-					add = 20
 				}
 
-				if = { # Can charge higher tolls if we control both sides
-					limit = {
-						scope:is_sole_controller = yes
-					}
-
-					add = 20
-				}
-
-				if = { # Don't extort in gibraltar
-					limit = {
-						scope:strait = {
-							type = strait_type:strait_gibraltar
-						}
-					}
-
-					multiply = 0.5
-				}
-				else_if = { # Make some money on your canals
-					limit = {
-						scope:strait = {
-							OR = {
-								type = strait_type:canal_panama
-								type = strait_type:canal_suez
-							}
-						}
-					}
-
-					add = 100
-				}
-			}
-
-			high_tolls = {
-				value = 0
+				add = 100
 			}
 		}
 	}
+
+	permissions_scores = {
+		all = {
+			value = 0
+			# LSM: honor the accepted Straits convention while it remains in force.
+			if = {
+				limit = { lsm_straits_ai_open_policy = yes }
+				add = 10000
+			}
+		}
+
+		no_enemies = {
+			value = 10
+		}
+
+		only_allies = {
+			value = 0
+
+			# Commented out for now as AI is too happy to close straits, we should consider bringing this back later
+			#if = { # Wants to keep competitor navies out
+			#	limit = {
+			#		OR = {
+			#			has_strategy = ai_strategy_colonial_expansion
+			#			has_strategy = ai_strategy_territorial_expansion
+			#		}
+			#	}
+			#
+			#	add = 20
+			#}
+
+			if = { # Don't close off gibraltar
+				limit = {
+					scope:strait = {
+						type = strait_type:strait_gibraltar
+					}
+				}
+
+				multiply = 0
+			}
+		}
+
+		only_controller = {
+			value = 0
+			# LSM: honor the accepted Straits convention while it remains in force.
+			if = {
+				limit = { lsm_straits_ai_closed_policy = yes }
+				add = 10000
+			}
+		}
+	}
+
+	toll_rate_scores = {
+		no_tolls = {
+			value = 0
+
+			if = {
+				limit = {
+					scope:is_sole_controller = no
+					OR = {
+						has_strategy = ai_strategy_maintain_power_balance
+						has_strategy = ai_strategy_anti_imperialism
+					}
+				}
+
+				add = 20
+			}
+		}
+
+		low_tolls = {
+			value = 10
+
+			if = {
+				limit = {
+					scope:is_sole_controller = yes
+					OR = {
+						has_strategy = ai_strategy_maintain_power_balance
+						has_strategy = ai_strategy_anti_imperialism
+					}
+				}
+
+				add = 20
+			}
+		}
+
+		medium_tolls = {
+			value = 0
+
+			if = { # "Greed is good"
+				limit = {
+					OR = {
+						has_strategy = ai_strategy_economic_imperialism
+						has_strategy = ai_strategy_colonial_expansion
+					}
+				}
+
+				add = 20
+			}
+
+			if = { # Can charge higher tolls if we control both sides
+				limit = {
+					scope:is_sole_controller = yes
+				}
+
+				add = 20
+			}
+
+			if = { # Don't extort in gibraltar
+				limit = {
+					scope:strait = {
+						type = strait_type:strait_gibraltar
+					}
+				}
+
+				multiply = 0.5
+			}
+			else_if = { # Make some money on your canals
+				limit = {
+					scope:strait = {
+						OR = {
+							type = strait_type:canal_panama
+							type = strait_type:canal_suez
+						}
+					}
+				}
+
+				add = 100
+			}
+		}
+
+		high_tolls = {
+			value = 0
+		}
+	}
+}
 
 	# A fleet composition describes a role a fleet can take (e.g. main_battle_fleet, raid_fleet):
 	# what kind of ships it should be made of and what missions it should pursue. The AI will try
