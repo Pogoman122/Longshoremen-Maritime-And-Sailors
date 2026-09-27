@@ -1,0 +1,7 @@
+﻿l_polish:
+ building_government_lighthouse:0 "Latarnia morska"
+ bg_lighthouse: "Latarnie morskie"
+ lsm_lighthouse_can_construct_tt: "Budowa $building_government_lighthouse$ jest dostępna."
+ canal_welland: "Kanał Welland"
+ building_welland_canal:0 "Kanał Welland"
+ building_welland_canal_lens_option:0 "Zbuduj $building_welland_canal$"

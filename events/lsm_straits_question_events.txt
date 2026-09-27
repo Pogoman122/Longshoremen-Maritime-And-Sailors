@@ -1,0 +1,102 @@
+namespace = straits_question_events
+
+straits_question_events.1 = {
+    type = country_event
+    placement = root
+    title = straits_question_events.1.t
+    desc = straits_question_events.1.d
+    flavor = straits_question_events.1.f
+	event_image = {
+		video = "southamerica_aristocrats"
+	}
+    duration = 3
+
+    trigger = {
+        lsm_straits_is_chair = yes
+        exists = c:TUR
+        NOT = {
+            has_global_variable = straits_conference_started_global_var
+        }
+    }
+
+    immediate = {
+        lsm_begin_straits_conference = yes
+    }
+
+    option = {
+        name = straits_question_events.1.a
+        default_option = yes
+    }
+}
+
+straits_question_events.4 = {
+    type = country_event
+    placement = root
+	event_image = {
+		video = "southamerica_aristocrats"
+	}
+    title = {
+        first_valid = {
+            triggered_desc = {
+                trigger = { has_global_variable = straits_ottoman_prerogative_global_var }
+                desc = straits_question_events.4.t_sovereignty
+            }
+            triggered_desc = {
+                trigger = { always = yes }
+                desc = straits_question_events.4.t
+            }
+        }
+    }
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    has_global_variable = straits_ancient_rule_global_var
+                }
+                desc = straits_question_events.4.d1
+            }
+            triggered_desc = {
+                trigger = {
+                    has_global_variable = straits_russian_entente_global_var
+                }
+                desc = straits_question_events.4.d2
+            }
+            triggered_desc = {
+                trigger = {
+                    has_global_variable = straits_open_passage_global_var
+                }
+                desc = straits_question_events.4.d3
+            }
+            triggered_desc = {
+                trigger = {
+                    has_global_variable = straits_ottoman_prerogative_global_var
+                }
+                desc = straits_question_events.4.d4
+            }
+        }
+    }
+    flavor = straits_question_events.4.f
+    duration = 3
+
+    option = {
+        name = straits_question_events.4.a
+        default_option = yes
+    }
+}
+
+straits_question_events.5 = {
+    type = country_event
+    placement = root
+    title = straits_question_events.5.t
+    desc = straits_question_events.5.d
+    flavor = straits_question_events.5.f
+	event_image = {
+		video = "southamerica_aristocrats"
+	}
+    duration = 3
+
+    option = {
+        name = straits_question_events.5.a
+        default_option = yes
+    }
+}

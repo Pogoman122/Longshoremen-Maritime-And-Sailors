@@ -1,0 +1,13 @@
+﻿l_french:
+ longshoremen:0 "@longshoremen! $longshoremen_no_icon$"
+ longshoremen_only_icon:0 "@longshoremen!"
+ longshoremen_no_icon:0 "Dockers"
+ longshoremen_desc:0 "Les dockers sont des ouvriers portuaires généralement employés uniquement dans les [GetBuildingType('building_port').GetName] [Concept('concept_building', '$concept_buildings$')] et les [GetBuildingType('building_trade_center').GetName] [Concept('concept_building', '$concept_buildings$')]. Spécialisés dans le chargement et le déchargement des marchandises, ils sont essentiels au bon fonctionnement du [concept_market]."
+ sailors:1 "@sailors! $sailors_no_icon$"
+ sailors_only_icon:1 "@sailors!"
+ sailors_no_icon:1 "Marins"
+ sailors_desc:0 "Des mers aux rivages, on trouve toujours des marins accomplissant leurs tâches à bord des bâtiments que l'État leur ordonne de servir. Politiquement, ils tendent à s'aligner sur leur rôle au sein des forces armées."
+ soldiers:1 "@soldiers! $soldiers_no_icon$"
+ soldiers_only_icon:1 "@soldiers!"
+ soldiers_no_icon:1 "Soldats"
+ soldiers_desc:0 "Les soldats constituent l'essentiel des forces terrestres de la nation. Politiquement, ils tendent à s'aligner sur leur rôle au sein des forces armées."

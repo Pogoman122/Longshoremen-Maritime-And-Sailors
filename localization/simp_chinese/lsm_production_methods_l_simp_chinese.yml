@@ -1,0 +1,7 @@
+﻿l_simp_chinese:
+
+ pm_base:0 "基础"
+ pmg_base_building_lighthouse:1 "$pm_base$"
+ pm_lighthouse_argand_lamp:0 "阿尔冈灯"
+ pm_lighthouse_gas_lamp:0 "煤气灯"
+ pm_lighthouse_electric_lamp:0 "电灯"

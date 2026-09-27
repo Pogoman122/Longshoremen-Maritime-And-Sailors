@@ -1,0 +1,6 @@
+﻿l_spanish:
+ concept_sailor: "Marinero"
+ concept_sailors: "Marineros"
+ concept_sailor_desc: "[GetPopType('sailors').GetName] y [SelectLocalization(GetPlayer.IsValid,'concept_ship_crew_desc_added','Officers')] que forman la [concept_ship_crew] de un [concept_ship].\n\nConstruir o ampliar [GetBuildingType('building_naval_administration').GetName] [Concept('concept_building', '$concept_buildings$')] aumenta los $concept_sailors$ disponibles. Los $concept_sailors$ inactivos siguen cobrando, por lo que la capacidad excedente supone un desperdicio de [concept_government_expenses]."
+ state_longshoremen_mortality_mult:1 "[Concept('concept_pop_growth', '$concept_pop_growth_mortality$')] de $longshoremen$"
+ state_longshoremen_mortality_mult_desc:1 "Un aumento o una disminución de la [Concept('concept_pop_growth', '$concept_pop_growth_mortality$')] de $longshoremen$"

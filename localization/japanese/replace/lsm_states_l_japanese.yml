@@ -1,0 +1,8 @@
+﻿l_japanese:
+ STATE_LAKE_SUPERIOR: "スペリオル湖"
+ STATE_LAKE_MICHIGAN: "ミシガン湖"
+ STATE_LAKE_ONTARIO: "ヒューロン湖"
+ STATE_LAKE_ERIE: "エリー湖"
+ STATE_LAKE_HURON: "オンタリオ湖"
+ region_great_lakes: "五大湖"
+ region_midwest: "中西部"

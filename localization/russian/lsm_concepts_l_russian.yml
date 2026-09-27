@@ -1,0 +1,6 @@
+﻿l_russian:
+ concept_sailor: "Моряк"
+ concept_sailors: "Моряки"
+ concept_sailor_desc: "[GetPopType('sailors').GetName] и [SelectLocalization(GetPlayer.IsValid,'concept_ship_crew_desc_added','Officers')], составляющие [concept_ship_crew] [concept_ship].\n\nСтроительство или расширение [GetBuildingType('building_naval_administration').GetName] [Concept('concept_building', '$concept_buildings$')] увеличивает число доступных $concept_sailors$. Бездействующие $concept_sailors$ всё равно получают жалование, поэтому избыточная численность приводит к напрасным [concept_government_expenses]."
+ state_longshoremen_mortality_mult:1 "[Concept('concept_pop_growth', '$concept_pop_growth_mortality$')] среди $longshoremen$"
+ state_longshoremen_mortality_mult_desc:1 "Увеличение или уменьшение [Concept('concept_pop_growth', '$concept_pop_growth_mortality$')] среди $longshoremen$"

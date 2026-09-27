@@ -1,0 +1,83 @@
+lsm_straits_is_voter = {
+    OR = {
+        c:GBR ?= this
+        c:FRA ?= this
+        c:AUS ?= this
+        c:PRU ?= this
+        c:RUS ?= this
+    }
+}
+
+lsm_straits_is_participant = {
+    OR = {
+        lsm_straits_is_voter = yes
+        c:TUR ?= this
+    }
+}
+
+lsm_straits_has_voted = {
+    OR = {
+        has_variable = straits_ancient_rule_button_var
+        has_variable = straits_open_passage_button_var
+        has_variable = straits_russian_entente_button_var
+        has_variable = straits_ottoman_prerogative_button_var
+    }
+}
+
+lsm_straits_is_chair = {
+    OR = {
+        c:GBR ?= this
+        AND = {
+            NOT = { exists = c:GBR }
+            c:FRA ?= this
+        }
+        AND = {
+            NOT = { exists = c:GBR }
+            NOT = { exists = c:FRA }
+            c:RUS ?= this
+        }
+        AND = {
+            NOT = { exists = c:GBR }
+            NOT = { exists = c:FRA }
+            NOT = { exists = c:RUS }
+            c:AUS ?= this
+        }
+        AND = {
+            NOT = { exists = c:GBR }
+            NOT = { exists = c:FRA }
+            NOT = { exists = c:RUS }
+            NOT = { exists = c:AUS }
+            c:PRU ?= this
+        }
+    }
+}
+
+lsm_straits_ai_open_policy = {
+    c:TUR ?= this
+    is_ai = yes
+    has_global_variable = straits_convention_signed_tur_global_var
+    NOT = { has_global_variable = straits_convention_rejected_tur_global_var }
+    any_scope_treaty = {
+        any_scope_article = {
+            has_type = lsm_straits_open_passage
+            source_country = root
+        }
+    }
+}
+
+lsm_straits_ai_closed_policy = {
+    c:TUR ?= this
+    is_ai = yes
+    has_global_variable = straits_convention_signed_tur_global_var
+    NOT = { has_global_variable = straits_convention_rejected_tur_global_var }
+    can_close_straits = yes
+    lsm_straits_ai_open_policy = no
+    any_scope_treaty = {
+        any_scope_article = {
+            OR = {
+                has_type = lsm_straits_ancient_rule
+                has_type = lsm_straits_russian_entente
+            }
+        }
+    }
+}

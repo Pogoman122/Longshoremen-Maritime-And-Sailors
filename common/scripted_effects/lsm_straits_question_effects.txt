@@ -1,0 +1,292 @@
+lsm_begin_straits_conference = {
+    if = {
+        limit = {
+            exists = c:TUR
+            NOT = { has_global_variable = straits_conference_started_global_var }
+        }
+        set_global_variable = straits_conference_started_global_var
+        set_global_variable = hunkar_iskelesi_expired_global_var
+        set_global_variable = { name = je_straits_question_proposal_1 value = 0 }
+        set_global_variable = { name = je_straits_question_proposal_2 value = 0 }
+        set_global_variable = { name = je_straits_question_proposal_3 value = 0 }
+        set_global_variable = { name = je_straits_question_proposal_4 value = 0 }
+        set_global_variable = { name = je_straits_question_timer value = 6 }
+        every_country = {
+            limit = { lsm_straits_is_participant = yes }
+            remove_variable = straits_ancient_rule_button_var
+            remove_variable = straits_open_passage_button_var
+            remove_variable = straits_russian_entente_button_var
+            remove_variable = straits_ottoman_prerogative_button_var
+            remove_variable = decided_on_straits_convention_var
+        }
+    }
+}
+
+lsm_straits_cast_ancient_rule_vote = {
+    if = {
+        limit = {
+            lsm_straits_is_voter = yes
+            has_journal_entry = je_straits_question
+            lsm_straits_has_voted = no
+            NOT = { has_global_variable = straits_conference_has_concluded_global_var }
+        }
+        set_variable = straits_ancient_rule_button_var
+        change_global_variable = {
+            name = je_straits_question_proposal_1
+            add = THIS.prestige
+        }
+    }
+}
+
+lsm_straits_cast_open_passage_vote = {
+    if = {
+        limit = {
+            lsm_straits_is_voter = yes
+            has_journal_entry = je_straits_question
+            lsm_straits_has_voted = no
+            NOT = { has_global_variable = straits_conference_has_concluded_global_var }
+        }
+        set_variable = straits_open_passage_button_var
+        change_global_variable = {
+            name = je_straits_question_proposal_3
+            add = THIS.prestige
+        }
+    }
+}
+
+lsm_straits_cast_russian_entente_vote = {
+    if = {
+        limit = {
+            lsm_straits_is_voter = yes
+            has_journal_entry = je_straits_question
+            lsm_straits_has_voted = no
+            NOT = { has_global_variable = straits_conference_has_concluded_global_var }
+        }
+        set_variable = straits_russian_entente_button_var
+        change_global_variable = {
+            name = je_straits_question_proposal_2
+            add = THIS.prestige
+        }
+    }
+}
+
+lsm_straits_cast_ottoman_prerogative_vote = {
+    if = {
+        limit = {
+            lsm_straits_is_voter = yes
+            has_journal_entry = je_straits_question
+            lsm_straits_has_voted = no
+            NOT = { has_global_variable = straits_conference_has_concluded_global_var }
+        }
+        set_variable = straits_ottoman_prerogative_button_var
+        change_global_variable = {
+            name = je_straits_question_proposal_4
+            add = THIS.prestige
+        }
+    }
+}
+
+lsm_straits_cast_weighted_vote = {
+    random_list = {
+        60 = {
+            modifier = {
+                if = { limit = { c:GBR ?= this } add = 10 }
+                if = { limit = { c:FRA ?= this } add = -5 }
+                if = { limit = { c:AUS ?= this } add = 10 }
+                if = { limit = { c:RUS ?= this } add = -35 }
+            }
+            lsm_straits_cast_ancient_rule_vote = yes
+        }
+        25 = {
+            modifier = {
+                if = { limit = { c:FRA ?= this } add = 7 }
+                if = { limit = { c:AUS ?= this } add = -10 }
+                if = { limit = { c:RUS ?= this } add = -10 }
+            }
+            lsm_straits_cast_open_passage_vote = yes
+        }
+        12 = {
+            modifier = {
+                if = { limit = { c:GBR ?= this } add = -8 }
+                if = { limit = { c:FRA ?= this } add = -2 }
+                if = { limit = { c:AUS ?= this } add = -2 }
+                if = { limit = { c:RUS ?= this } add = 46 }
+                if = { limit = { NOT = { exists = c:RUS } } multiply = 0 }
+            }
+            lsm_straits_cast_russian_entente_vote = yes
+        }
+        3 = {
+            modifier = {
+                if = { limit = { c:GBR ?= this } add = -2 }
+                if = { limit = { c:AUS ?= this } add = 2 }
+                if = { limit = { c:RUS ?= this } add = -1 }
+            }
+            lsm_straits_cast_ottoman_prerogative_vote = yes
+        }
+    }
+}
+
+lsm_straits_resolve_ballot = {
+    if = {
+        limit = {
+            global_var:je_straits_question_proposal_1 >= global_var:je_straits_question_proposal_2
+            global_var:je_straits_question_proposal_1 >= global_var:je_straits_question_proposal_3
+            global_var:je_straits_question_proposal_1 >= global_var:je_straits_question_proposal_4
+        }
+        set_global_variable = straits_ancient_rule_global_var
+    }
+    else_if = {
+        limit = {
+            global_var:je_straits_question_proposal_3 >= global_var:je_straits_question_proposal_1
+            global_var:je_straits_question_proposal_3 >= global_var:je_straits_question_proposal_2
+            global_var:je_straits_question_proposal_3 >= global_var:je_straits_question_proposal_4
+        }
+        set_global_variable = straits_open_passage_global_var
+    }
+    else_if = {
+        limit = {
+            global_var:je_straits_question_proposal_2 >= global_var:je_straits_question_proposal_1
+            global_var:je_straits_question_proposal_2 >= global_var:je_straits_question_proposal_3
+            global_var:je_straits_question_proposal_2 >= global_var:je_straits_question_proposal_4
+        }
+        set_global_variable = straits_russian_entente_global_var
+    }
+
+    else = {
+        set_global_variable = straits_ottoman_prerogative_global_var
+    }
+    set_global_variable = straits_conference_has_concluded_global_var
+    if = {
+        limit = { has_global_variable = straits_ottoman_prerogative_global_var }
+        c:TUR ?= { set_variable = decided_on_straits_convention_var }
+        set_global_variable = straits_convention_signed_tur_global_var
+        lsm_create_straits_convention_treaties = yes
+    }
+    else_if = {
+        limit = {
+            has_global_variable = straits_russian_entente_global_var
+            NOT = { exists = c:RUS }
+        }
+        set_global_variable = straits_convention_rejected_tur_global_var
+    }
+    else = {
+        set_global_variable = { name = je_straits_question_acceptance_timer value = 6 }
+    }
+}
+
+lsm_straits_accept_settlement = {
+    if = {
+        limit = {
+            c:TUR ?= this
+            has_global_variable = straits_conference_has_concluded_global_var
+            NOT = { has_variable = decided_on_straits_convention_var }
+        }
+        set_variable = decided_on_straits_convention_var
+        if = {
+            limit = {
+                has_global_variable = straits_russian_entente_global_var
+                NOT = { exists = c:RUS }
+            }
+            set_global_variable = straits_convention_rejected_tur_global_var
+        }
+        else = {
+            set_global_variable = straits_convention_signed_tur_global_var
+            lsm_create_straits_convention_treaties = yes
+        }
+    }
+}
+
+lsm_straits_reject_settlement = {
+    if = {
+        limit = {
+            c:TUR ?= this
+            has_global_variable = straits_conference_has_concluded_global_var
+            NOT = { has_variable = decided_on_straits_convention_var }
+        }
+        set_variable = decided_on_straits_convention_var
+        set_global_variable = straits_convention_rejected_tur_global_var
+    }
+}
+
+lsm_create_straits_convention_treaties = {
+    if = {
+        limit = {
+            exists = c:TUR
+            has_global_variable = straits_conference_has_concluded_global_var
+            has_global_variable = straits_convention_signed_tur_global_var
+            NOT = { has_global_variable = straits_convention_rejected_tur_global_var }
+            NOT = { has_global_variable = straits_convention_treaties_created_global_var }
+        }
+        set_global_variable = straits_convention_treaties_created_global_var
+        if = {
+            limit = { NOT = { has_global_variable = straits_ottoman_prerogative_global_var } }
+            every_country = {
+                limit = { lsm_straits_is_voter = yes }
+                save_scope_as = lsm_straits_signatory
+                if = {
+                    limit = { has_global_variable = straits_ancient_rule_global_var }
+                    create_treaty = {
+                        name = TREATY_NAME_LSM_STRAITS_ANCIENT_RULE
+                        first_country = c:TUR
+                        second_country = scope:lsm_straits_signatory
+                        is_draft = no
+                        binding_period = { years = 5 }
+                        articles_to_create = {
+                            { article = lsm_straits_ancient_rule }
+                        }
+                    }
+                }
+                else_if = {
+                    limit = { has_global_variable = straits_open_passage_global_var }
+                    create_treaty = {
+                        name = TREATY_NAME_LSM_STRAITS_OPEN_PASSAGE
+                        first_country = c:TUR
+                        second_country = scope:lsm_straits_signatory
+                        is_draft = no
+                        binding_period = { years = 5 }
+                        articles_to_create = {
+                            {
+                                article = lsm_straits_open_passage
+                                source_country = c:TUR
+                                target_country = scope:lsm_straits_signatory
+                            }
+                        }
+                    }
+                }
+                else_if = {
+                    limit = { has_global_variable = straits_russian_entente_global_var }
+                    if = {
+                        limit = { c:RUS ?= this }
+                        create_treaty = {
+                            name = TREATY_NAME_LSM_STRAITS_RUSSIAN_ENTENTE
+                            first_country = c:TUR
+                            second_country = scope:lsm_straits_signatory
+                            is_draft = no
+                            binding_period = { years = 5 }
+                            articles_to_create = {
+                                { article = lsm_straits_russian_entente }
+                                {
+                                    article = lsm_straits_russian_access
+                                    source_country = c:TUR
+                                    target_country = c:RUS
+                                }
+                            }
+                        }
+                    }
+                    else = {
+                        create_treaty = {
+                            name = TREATY_NAME_LSM_STRAITS_RUSSIAN_ENTENTE
+                            first_country = c:TUR
+                            second_country = scope:lsm_straits_signatory
+                            is_draft = no
+                            binding_period = { years = 5 }
+                            articles_to_create = {
+                                { article = lsm_straits_russian_entente }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

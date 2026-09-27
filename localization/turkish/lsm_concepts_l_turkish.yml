@@ -1,0 +1,6 @@
+﻿l_turkish:
+ concept_sailor: "Denizci"
+ concept_sailors: "Denizciler"
+ concept_sailor_desc: "Bir [concept_ship] gemisinin [concept_ship_crew] mürettebatını oluşturan [GetPopType('sailors').GetName] ve [SelectLocalization(GetPlayer.IsValid,'concept_ship_crew_desc_added','Officers')].\n\n[GetBuildingType('building_naval_administration').GetName] [Concept('concept_building', '$concept_buildings$')] inşa etmek veya genişletmek kullanılabilir $concept_sailors$ sayısını artırır. Atıl $concept_sailors$ yine de maaş alır, bu nedenle fazla kapasite [concept_government_expenses] israfına yol açar."
+ state_longshoremen_mortality_mult:1 "$longshoremen$ için [Concept('concept_pop_growth', '$concept_pop_growth_mortality$')]"
+ state_longshoremen_mortality_mult_desc:1 "$longshoremen$ için [Concept('concept_pop_growth', '$concept_pop_growth_mortality$')] artışı veya azalışı"

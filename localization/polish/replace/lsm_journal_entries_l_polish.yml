@@ -1,0 +1,9 @@
+﻿l_polish:
+ je_welland_canal:0 "Budowa Kanału Welland"
+ je_welland_canal_reason:0 "Kanał omijający wodospad Niagara stworzyłby żeglowne połączenie między jeziorem Ontario a jeziorem Erie. Przedsięwzięcie będzie wymagało znacznych wydatków publicznych i wielu lat prac inżynieryjnych."
+ lsm_begin_welland_canal_button:0 "Rozpocznij budowę"
+ lsm_begin_welland_canal_button_desc:0 "Rozpocznij budowę Kanału Welland. Projekt będzie kosztował £5 000 tygodniowo przez około osiem lat."
+ je_welland_canal_construction:0 "Budowa Kanału Welland"
+ je_welland_canal_construction_reason:0 "Trwają prace nad kanałem łączącym jezioro Ontario z jeziorem Erie z ominięciem wodospadu Niagara."
+ je_welland_canal_progress:0 "Szacuje się, że planowanie i budowa Kanału Welland potrwają do ośmiu lat."
+ 

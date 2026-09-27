@@ -1,0 +1,3 @@
+﻿l_german:
+ state_longshoremen_mortality_mult:1 "[Concept('concept_pop_growth', '$concept_pop_growth_mortality$')] von $longshoremen$"
+ state_longshoremen_mortality_mult_desc:1 "Eine Erhöhung oder Verringerung der [Concept('concept_pop_growth', '$concept_pop_growth_mortality$')] von $longshoremen$"

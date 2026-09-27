@@ -1,0 +1,9 @@
+﻿l_german:
+ je_welland_canal:0 "Bau des Wellandkanals"
+ je_welland_canal_reason:0 "Ein Kanal zur Umgehung der Niagarafälle würde eine schiffbare Verbindung zwischen dem Ontariosee und dem Eriesee schaffen. Das Vorhaben wird erhebliche öffentliche Ausgaben und jahrelange Ingenieursarbeit erfordern."
+ lsm_begin_welland_canal_button:0 "Bau beginnen"
+ lsm_begin_welland_canal_button_desc:0 "Beginnt mit dem Bau des Wellandkanals. Das Projekt wird ungefähr acht Jahre lang £5.000 pro Woche kosten."
+ je_welland_canal_construction:0 "Bau des Wellandkanals"
+ je_welland_canal_construction_reason:0 "Die Arbeiten an einem Kanal, der den Ontariosee unter Umgehung der Niagarafälle mit dem Eriesee verbindet, sind im Gange."
+ je_welland_canal_progress:0 "Für Planung und Bau des Wellandkanals werden bis zu acht Jahre veranschlagt."
+ 

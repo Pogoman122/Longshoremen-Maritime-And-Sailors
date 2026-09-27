@@ -1,0 +1,7 @@
+﻿l_polish:
+
+ pm_base:0 "Podstawowa"
+ pmg_base_building_lighthouse:1 "$pm_base$"
+ pm_lighthouse_argand_lamp:0 "Lampa Arganda"
+ pm_lighthouse_gas_lamp:0 "Lampa gazowa"
+ pm_lighthouse_electric_lamp:0 "Lampa elektryczna"

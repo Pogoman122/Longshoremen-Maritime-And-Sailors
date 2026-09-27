@@ -1,0 +1,8 @@
+﻿l_spanish:
+ STATE_LAKE_SUPERIOR: "Lago Superior"
+ STATE_LAKE_MICHIGAN: "Lago Michigan"
+ STATE_LAKE_ONTARIO: "Lago Hurón"
+ STATE_LAKE_ERIE: "Lago Erie"
+ STATE_LAKE_HURON: "Lago Ontario"
+ region_great_lakes: "Grandes Lagos"
+ region_midwest: "Medio Oeste"

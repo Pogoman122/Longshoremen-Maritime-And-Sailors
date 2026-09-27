@@ -1,0 +1,6 @@
+﻿l_korean:
+ concept_sailor: "선원"
+ concept_sailors: "선원"
+ concept_sailor_desc: "[concept_ship]의 [concept_ship_crew]을 구성하는 [GetPopType('sailors').GetName] 및 [SelectLocalization(GetPlayer.IsValid,'concept_ship_crew_desc_added','Officers')]입니다.\n\n[GetBuildingType('building_naval_administration').GetName] [Concept('concept_building', '$concept_buildings$')]을 건설하거나 확장하면 사용 가능한 $concept_sailors$ 수가 늘어납니다. 유휴 $concept_sailors$에게도 급여가 지급되므로 남는 수용력은 [concept_government_expenses]의 낭비가 됩니다."
+ state_longshoremen_mortality_mult:1 "$longshoremen$의 [Concept('concept_pop_growth', '$concept_pop_growth_mortality$')]"
+ state_longshoremen_mortality_mult_desc:1 "$longshoremen$의 [Concept('concept_pop_growth', '$concept_pop_growth_mortality$')] 증가 또는 감소"

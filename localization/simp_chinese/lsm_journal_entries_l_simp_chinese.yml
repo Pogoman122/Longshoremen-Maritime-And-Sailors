@@ -1,0 +1,9 @@
+﻿l_simp_chinese:
+ je_welland_canal:0 "建设威兰运河"
+ je_welland_canal_reason:0 "一条绕过尼亚加拉瀑布的运河将建立安大略湖与伊利湖之间可通航的连接。这项工程需要大量公共开支和多年的工程建设。"
+ lsm_begin_welland_canal_button:0 "开始建设"
+ lsm_begin_welland_canal_button_desc:0 "开始建设威兰运河。该项目将在约八年时间里每周花费£5,000。"
+ je_welland_canal_construction:0 "建设威兰运河"
+ je_welland_canal_construction_reason:0 "连接安大略湖与伊利湖并绕过尼亚加拉瀑布的运河工程正在进行中。"
+ je_welland_canal_progress:0 "威兰运河的规划和建设预计最多需要八年完成。"
+ 

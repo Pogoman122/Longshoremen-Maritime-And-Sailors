@@ -1,0 +1,7 @@
+﻿l_korean:
+ building_government_lighthouse:0 "등대"
+ bg_lighthouse: "등대"
+ lsm_lighthouse_can_construct_tt: "$building_government_lighthouse$ 건설이 가능합니다."
+ canal_welland: "웰랜드 운하"
+ building_welland_canal:0 "웰랜드 운하"
+ building_welland_canal_lens_option:0 "$building_welland_canal$ 건설"

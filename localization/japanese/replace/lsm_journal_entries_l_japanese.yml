@@ -1,0 +1,9 @@
+﻿l_japanese:
+ je_welland_canal:0 "ウェランド運河建設"
+ je_welland_canal_reason:0 "ナイアガラの滝を迂回する運河を築けば、オンタリオ湖とエリー湖の間に航行可能な連絡路ができます。この事業には多額の公費と長年の土木工事が必要です。"
+ lsm_begin_welland_canal_button:0 "建設開始"
+ lsm_begin_welland_canal_button_desc:0 "ウェランド運河の建設を開始します。この事業には約8年間、毎週£5,000が必要です。"
+ je_welland_canal_construction:0 "ウェランド運河建設"
+ je_welland_canal_construction_reason:0 "ナイアガラの滝を迂回し、オンタリオ湖とエリー湖を結ぶ運河の工事が進んでいます。"
+ je_welland_canal_progress:0 "ウェランド運河の計画と建設には、完成まで最長8年かかる見込みです。"
+ 

@@ -1,0 +1,7 @@
+﻿l_spanish:
+ building_government_lighthouse:0 "Faro"
+ bg_lighthouse: "Faros"
+ lsm_lighthouse_can_construct_tt: "La construcción de $building_government_lighthouse$ está disponible."
+ canal_welland: "Canal Welland"
+ building_welland_canal:0 "Canal Welland"
+ building_welland_canal_lens_option:0 "Construir $building_welland_canal$"

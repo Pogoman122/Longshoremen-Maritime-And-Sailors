@@ -1,0 +1,13 @@
+﻿l_polish:
+ longshoremen:0 "@longshoremen! $longshoremen_no_icon$"
+ longshoremen_only_icon:0 "@longshoremen!"
+ longshoremen_no_icon:0 "Dokerzy"
+ longshoremen_desc:0 "Pracownicy portowi zatrudniani zazwyczaj wyłącznie w [GetBuildingType('building_port').GetName] [Concept('concept_building', '$concept_buildings$')] oraz [GetBuildingType('building_trade_center').GetName] [Concept('concept_building', '$concept_buildings$')]. Specjalizują się w załadunku i rozładunku towarów i mają ogromne znaczenie dla funkcjonowania [concept_market]."
+ sailors:1 "@sailors! $sailors_no_icon$"
+ sailors_only_icon:1 "@sailors!"
+ sailors_no_icon:1 "Marynarze"
+ sailors_desc:0 "Od morza po wybrzeże zawsze znajdzie się marynarz pełniący swoje obowiązki na pokładzie dowolnego statku, na który skieruje go państwo. Politycznie zwykle skłaniają się ku stanowiskom zgodnym z ich rolą w Siłach Zbrojnych."
+ soldiers:1 "@soldiers! $soldiers_no_icon$"
+ soldiers_only_icon:1 "@soldiers!"
+ soldiers_no_icon:1 "Żołnierze"
+ soldiers_desc:0 "Żołnierze stanowią większość sił lądowych państwa. Politycznie zwykle skłaniają się ku stanowiskom zgodnym z ich rolą w Siłach Zbrojnych."

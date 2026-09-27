@@ -1,0 +1,13 @@
+﻿l_german:
+ longshoremen:0 "@longshoremen! $longshoremen_no_icon$"
+ longshoremen_only_icon:0 "@longshoremen!"
+ longshoremen_no_icon:0 "Hafenarbeiter"
+ longshoremen_desc:0 "Hafenarbeiter, die normalerweise nur in [GetBuildingType('building_port').GetName] [Concept('concept_building', '$concept_buildings$')] und [GetBuildingType('building_trade_center').GetName] [Concept('concept_building', '$concept_buildings$')] beschäftigt sind. Sie sind auf das Be- und Entladen von Fracht spezialisiert und für das Funktionieren des [concept_market] von großer Bedeutung."
+ sailors:1 "@sailors! $sailors_no_icon$"
+ sailors_only_icon:1 "@sailors!"
+ sailors_no_icon:1 "Matrosen"
+ sailors_desc:0 "Von der See bis zur Küste findet man Matrosen bei der Erfüllung ihrer Pflichten an Bord jedes Schiffes, das der Staat ihnen zuweist. Politisch orientieren sie sich häufig an ihrer Rolle als Teil der Streitkräfte."
+ soldiers:1 "@soldiers! $soldiers_no_icon$"
+ soldiers_only_icon:1 "@soldiers!"
+ soldiers_no_icon:1 "Soldaten"
+ soldiers_desc:0 "Soldaten stellen den Großteil der Landstreitkräfte einer Nation. Politisch orientieren sie sich häufig an ihrer Rolle als Teil der Streitkräfte."

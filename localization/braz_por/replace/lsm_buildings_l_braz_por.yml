@@ -1,0 +1,7 @@
+﻿l_braz_por:
+ building_government_lighthouse:0 "Farol"
+ bg_lighthouse: "Faróis"
+ lsm_lighthouse_can_construct_tt: "A construção de $building_government_lighthouse$ está disponível."
+ canal_welland: "Canal Welland"
+ building_welland_canal:0 "Canal Welland"
+ building_welland_canal_lens_option:0 "Construir $building_welland_canal$"

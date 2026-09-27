@@ -1,0 +1,8 @@
+﻿l_german:
+ STATE_LAKE_SUPERIOR: "Oberer See"
+ STATE_LAKE_MICHIGAN: "Michigansee"
+ STATE_LAKE_ONTARIO: "Huronsee"
+ STATE_LAKE_ERIE: "Eriesee"
+ STATE_LAKE_HURON: "Ontariosee"
+ region_great_lakes: "Große Seen"
+ region_midwest: "Mittlerer Westen"

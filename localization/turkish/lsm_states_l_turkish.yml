@@ -1,0 +1,8 @@
+﻿l_turkish:
+ STATE_LAKE_SUPERIOR: "Superior Gölü"
+ STATE_LAKE_MICHIGAN: "Michigan Gölü"
+ STATE_LAKE_ONTARIO: "Huron Gölü"
+ STATE_LAKE_ERIE: "Erie Gölü"
+ STATE_LAKE_HURON: "Ontario Gölü"
+ region_great_lakes: "Büyük Göller"
+ region_midwest: "Ortabatı"

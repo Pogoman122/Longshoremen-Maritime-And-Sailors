@@ -1,0 +1,13 @@
+﻿l_russian:
+ longshoremen:0 "@longshoremen! $longshoremen_no_icon$"
+ longshoremen_only_icon:0 "@longshoremen!"
+ longshoremen_no_icon:0 "Докеры"
+ longshoremen_desc:0 "Портовые рабочие, которые обычно заняты только в [GetBuildingType('building_port').GetName] [Concept('concept_building', '$concept_buildings$')] и [GetBuildingType('building_trade_center').GetName] [Concept('concept_building', '$concept_buildings$')]. Они специализируются на погрузке и разгрузке грузов и крайне важны для работы [concept_market]."
+ sailors:1 "@sailors! $sailors_no_icon$"
+ sailors_only_icon:1 "@sailors!"
+ sailors_no_icon:1 "Моряки"
+ sailors_desc:0 "От моря до берега всегда найдётся моряк, исполняющий свои обязанности на борту любого судна, на которое его направит государство. Политически они обычно склоняются к позиции, соответствующей их роли в составе Вооружённых сил."
+ soldiers:1 "@soldiers! $soldiers_no_icon$"
+ soldiers_only_icon:1 "@soldiers!"
+ soldiers_no_icon:1 "Солдаты"
+ soldiers_desc:0 "Солдаты составляют основную массу сухопутных войск страны. Политически они обычно склоняются к позиции, соответствующей их роли в составе Вооружённых сил."

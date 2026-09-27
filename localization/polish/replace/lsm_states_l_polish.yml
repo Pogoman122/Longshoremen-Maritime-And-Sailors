@@ -1,0 +1,8 @@
+﻿l_polish:
+ STATE_LAKE_SUPERIOR: "Jezioro Górne"
+ STATE_LAKE_MICHIGAN: "Jezioro Michigan"
+ STATE_LAKE_ONTARIO: "Jezioro Huron"
+ STATE_LAKE_ERIE: "Jezioro Erie"
+ STATE_LAKE_HURON: "Jezioro Ontario"
+ region_great_lakes: "Wielkie Jeziora"
+ region_midwest: "Środkowy Zachód"

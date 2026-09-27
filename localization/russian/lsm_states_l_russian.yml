@@ -1,0 +1,8 @@
+﻿l_russian:
+ STATE_LAKE_SUPERIOR: "Озеро Верхнее"
+ STATE_LAKE_MICHIGAN: "Озеро Мичиган"
+ STATE_LAKE_ONTARIO: "Озеро Гурон"
+ STATE_LAKE_ERIE: "Озеро Эри"
+ STATE_LAKE_HURON: "Озеро Онтарио"
+ region_great_lakes: "Великие озёра"
+ region_midwest: "Средний Запад"

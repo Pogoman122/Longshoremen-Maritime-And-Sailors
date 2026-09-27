@@ -1,0 +1,8 @@
+﻿l_french:
+ STATE_LAKE_SUPERIOR: "Lac Supérieur"
+ STATE_LAKE_MICHIGAN: "Lac Michigan"
+ STATE_LAKE_ONTARIO: "Lac Huron"
+ STATE_LAKE_ERIE: "Lac Érié"
+ STATE_LAKE_HURON: "Lac Ontario"
+ region_great_lakes: "Grands Lacs"
+ region_midwest: "Midwest"

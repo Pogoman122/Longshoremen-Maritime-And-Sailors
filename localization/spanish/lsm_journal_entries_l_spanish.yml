@@ -1,0 +1,9 @@
+﻿l_spanish:
+ je_welland_canal:0 "Construcción del canal Welland"
+ je_welland_canal_reason:0 "Un canal que sorteara las cataratas del Niágara establecería una conexión navegable entre el lago Ontario y el lago Erie. La empresa requerirá un gasto público considerable y años de trabajos de ingeniería."
+ lsm_begin_welland_canal_button:0 "Comenzar la construcción"
+ lsm_begin_welland_canal_button_desc:0 "Comenzar la construcción del canal Welland. El proyecto costará £5.000 cada semana durante aproximadamente ocho años."
+ je_welland_canal_construction:0 "Construcción del canal Welland"
+ je_welland_canal_construction_reason:0 "Se está trabajando en un canal que conectará el lago Ontario con el lago Erie evitando las cataratas del Niágara."
+ je_welland_canal_progress:0 "Se estima que la planificación y construcción del canal Welland tardará hasta ocho años en completarse."
+ 

@@ -1,0 +1,24 @@
+﻿possible = {
+	custom_tooltip = {
+		text = je_straits_question_possible_tt
+		has_global_variable = hunkar_iskelesi_expired_global_var
+	}
+}
+
+complete = {
+	custom_tooltip = {
+		text = je_straits_question_complete_conference_tt
+		has_global_variable = straits_conference_has_concluded_global_var
+	}
+	custom_tooltip = {
+		text = je_straits_question_complete_turkey_tt
+		has_global_variable = straits_convention_signed_tur_global_var
+	}
+}
+
+fail = {
+	custom_tooltip = {
+		text = je_straits_question_fail_tt
+		has_global_variable = straits_convention_rejected_tur_global_var
+	}
+}

@@ -1,0 +1,6 @@
+﻿l_japanese:
+ concept_sailor: "水兵"
+ concept_sailors: "水兵"
+ concept_sailor_desc: "[concept_ship]の[concept_ship_crew]を構成する[GetPopType('sailors').GetName]と[SelectLocalization(GetPlayer.IsValid,'concept_ship_crew_desc_added','Officers')]です。\n\n[GetBuildingType('building_naval_administration').GetName] [Concept('concept_building', '$concept_buildings$')]を建設または拡張すると、利用可能な$concept_sailors$が増加します。待機中の$concept_sailors$にも給与が支払われるため、余剰人員は[concept_government_expenses]の浪費となります。"
+ state_longshoremen_mortality_mult:1 "$longshoremen$の[Concept('concept_pop_growth', '$concept_pop_growth_mortality$')]"
+ state_longshoremen_mortality_mult_desc:1 "$longshoremen$の[Concept('concept_pop_growth', '$concept_pop_growth_mortality$')]の増減"

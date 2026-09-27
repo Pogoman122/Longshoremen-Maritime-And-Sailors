@@ -1,0 +1,6 @@
+﻿l_simp_chinese:
+ concept_sailor: "水兵"
+ concept_sailors: "水兵"
+ concept_sailor_desc: "组成[concept_ship]的[concept_ship_crew]的[GetPopType('sailors').GetName]与[SelectLocalization(GetPlayer.IsValid,'concept_ship_crew_desc_added','Officers')]。\n\n建造或扩建[GetBuildingType('building_naval_administration').GetName] [Concept('concept_building', '$concept_buildings$')]可增加可用的$concept_sailors$。闲置的$concept_sailors$仍会领取薪资，因此过剩的编制会浪费[concept_government_expenses]。"
+ state_longshoremen_mortality_mult:1 "$longshoremen$的[Concept('concept_pop_growth', '$concept_pop_growth_mortality$')]"
+ state_longshoremen_mortality_mult_desc:1 "$longshoremen$的[Concept('concept_pop_growth', '$concept_pop_growth_mortality$')]增加或减少"

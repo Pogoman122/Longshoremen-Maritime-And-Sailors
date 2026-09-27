@@ -1,0 +1,7 @@
+﻿l_braz_por:
+
+ pm_base:0 "Base"
+ pmg_base_building_lighthouse:1 "$pm_base$"
+ pm_lighthouse_argand_lamp:0 "Lâmpada de Argand"
+ pm_lighthouse_gas_lamp:0 "Lâmpada a gás"
+ pm_lighthouse_electric_lamp:0 "Lâmpada elétrica"

@@ -1,0 +1,7 @@
+﻿l_simp_chinese:
+ building_government_lighthouse:0 "灯塔"
+ bg_lighthouse: "灯塔"
+ lsm_lighthouse_can_construct_tt: "可以建造$building_government_lighthouse$。"
+ canal_welland: "威兰运河"
+ building_welland_canal:0 "威兰运河"
+ building_welland_canal_lens_option:0 "建造$building_welland_canal$"

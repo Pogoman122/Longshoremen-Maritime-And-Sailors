@@ -1,0 +1,13 @@
+﻿l_korean:
+ longshoremen:0 "@longshoremen! $longshoremen_no_icon$"
+ longshoremen_only_icon:0 "@longshoremen!"
+ longshoremen_no_icon:0 "부두 노동자"
+ longshoremen_desc:0 "일반적으로 [GetBuildingType('building_port').GetName] [Concept('concept_building', '$concept_buildings$')] 및 [GetBuildingType('building_trade_center').GetName] [Concept('concept_building', '$concept_buildings$')]에서만 고용되는 항만 노동자입니다. 화물의 선적과 하역을 전문으로 하며 [concept_market]이 기능하는 데 매우 중요합니다."
+ sailors:1 "@sailors! $sailors_no_icon$"
+ sailors_only_icon:1 "@sailors!"
+ sailors_no_icon:1 "선원"
+ sailors_desc:0 "바다에서 해안까지, 국가가 명령한 어떤 선박에서든 임무를 수행하는 선원을 언제나 볼 수 있습니다. 정치적으로는 보통 군대의 일원이라는 자신의 역할에 맞춰 움직입니다."
+ soldiers:1 "@soldiers! $soldiers_no_icon$"
+ soldiers_only_icon:1 "@soldiers!"
+ soldiers_no_icon:1 "병사"
+ soldiers_desc:0 "병사들은 국가 지상군의 대부분을 이룹니다. 정치적으로는 보통 군대의 일원이라는 자신의 역할에 맞춰 움직입니다."

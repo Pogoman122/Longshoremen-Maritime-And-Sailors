@@ -1,0 +1,13 @@
+﻿l_japanese:
+ longshoremen:0 "@longshoremen! $longshoremen_no_icon$"
+ longshoremen_only_icon:0 "@longshoremen!"
+ longshoremen_no_icon:0 "港湾労働者"
+ longshoremen_desc:0 "通常は[GetBuildingType('building_port').GetName] [Concept('concept_building', '$concept_buildings$')]および[GetBuildingType('building_trade_center').GetName] [Concept('concept_building', '$concept_buildings$')]でのみ雇用される港湾労働者です。貨物の積み込みと荷下ろしを専門とし、[concept_market]の機能にとって非常に重要です。"
+ sailors:1 "@sailors! $sailors_no_icon$"
+ sailors_only_icon:1 "@sailors!"
+ sailors_no_icon:1 "水兵"
+ sailors_desc:0 "海から岸辺まで、国家が命じたあらゆる船の上で任務を果たす水兵の姿があります。政治的には、軍隊の一員としての役割に沿った立場を取ることが多いです。"
+ soldiers:1 "@soldiers! $soldiers_no_icon$"
+ soldiers_only_icon:1 "@soldiers!"
+ soldiers_no_icon:1 "兵士"
+ soldiers_desc:0 "兵士は国家の陸上戦力の大部分を構成します。政治的には、軍隊の一員としての役割に沿った立場を取ることが多いです。"

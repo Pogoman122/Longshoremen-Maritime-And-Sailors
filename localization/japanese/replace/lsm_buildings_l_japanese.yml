@@ -1,0 +1,7 @@
+﻿l_japanese:
+ building_government_lighthouse:0 "灯台"
+ bg_lighthouse: "灯台"
+ lsm_lighthouse_can_construct_tt: "$building_government_lighthouse$を建設できます。"
+ canal_welland: "ウェランド運河"
+ building_welland_canal:0 "ウェランド運河"
+ building_welland_canal_lens_option:0 "$building_welland_canal$を建設"

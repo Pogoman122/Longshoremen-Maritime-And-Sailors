@@ -1,0 +1,7 @@
+﻿l_turkish:
+ building_government_lighthouse:0 "Deniz Feneri"
+ bg_lighthouse: "Deniz Fenerleri"
+ lsm_lighthouse_can_construct_tt: "$building_government_lighthouse$ inşası kullanılabilir."
+ canal_welland: "Welland Kanalı"
+ building_welland_canal:0 "Welland Kanalı"
+ building_welland_canal_lens_option:0 "$building_welland_canal$ inşa et"

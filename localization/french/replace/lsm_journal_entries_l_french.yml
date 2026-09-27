@@ -1,0 +1,9 @@
+﻿l_french:
+ je_welland_canal:0 "Construction du canal Welland"
+ je_welland_canal_reason:0 "Un canal contournant les chutes du Niagara établirait une liaison navigable entre le lac Ontario et le lac Érié. L'entreprise nécessitera d'importantes dépenses publiques et plusieurs années de travaux d'ingénierie."
+ lsm_begin_welland_canal_button:0 "Commencer la construction"
+ lsm_begin_welland_canal_button_desc:0 "Commencer la construction du canal Welland. Le projet coûtera 5 000 £ par semaine pendant environ huit ans."
+ je_welland_canal_construction:0 "Construction du canal Welland"
+ je_welland_canal_construction_reason:0 "Les travaux d'un canal reliant le lac Ontario au lac Érié tout en contournant les chutes du Niagara sont en cours."
+ je_welland_canal_progress:0 "La planification et la construction du canal Welland devraient prendre jusqu'à huit ans."
+ 

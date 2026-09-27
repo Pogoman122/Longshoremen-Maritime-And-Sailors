@@ -1,0 +1,7 @@
+﻿l_japanese:
+
+ pm_base:0 "基本"
+ pmg_base_building_lighthouse:1 "$pm_base$"
+ pm_lighthouse_argand_lamp:0 "アルガン灯"
+ pm_lighthouse_gas_lamp:0 "ガス灯"
+ pm_lighthouse_electric_lamp:0 "電灯"

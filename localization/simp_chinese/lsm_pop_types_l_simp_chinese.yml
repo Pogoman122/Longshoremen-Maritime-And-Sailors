@@ -1,0 +1,13 @@
+﻿l_simp_chinese:
+ longshoremen:0 "@longshoremen! $longshoremen_no_icon$"
+ longshoremen_only_icon:0 "@longshoremen!"
+ longshoremen_no_icon:0 "码头工人"
+ longshoremen_desc:0 "通常仅受雇于[GetBuildingType('building_port').GetName] [Concept('concept_building', '$concept_buildings$')]和[GetBuildingType('building_trade_center').GetName] [Concept('concept_building', '$concept_buildings$')]的港口工人。他们专门负责装卸货物，对[concept_market]的正常运作极为重要。"
+ sailors:1 "@sailors! $sailors_no_icon$"
+ sailors_only_icon:1 "@sailors!"
+ sailors_no_icon:1 "水兵"
+ sailors_desc:0 "无论海上还是岸边，总能看到水兵在国家命其服役的各种船只上履行职责。在政治上，他们通常会倾向与其作为武装部队成员的身份一致的立场。"
+ soldiers:1 "@soldiers! $soldiers_no_icon$"
+ soldiers_only_icon:1 "@soldiers!"
+ soldiers_no_icon:1 "士兵"
+ soldiers_desc:0 "士兵构成国家陆军力量的主体。在政治上，他们通常会倾向与其作为武装部队成员的身份一致的立场。"

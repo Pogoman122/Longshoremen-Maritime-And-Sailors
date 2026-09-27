@@ -1,0 +1,13 @@
+﻿l_spanish:
+ longshoremen:0 "@longshoremen! $longshoremen_no_icon$"
+ longshoremen_only_icon:0 "@longshoremen!"
+ longshoremen_no_icon:0 "Estibadores"
+ longshoremen_desc:0 "Trabajadores portuarios que normalmente solo están empleados en [GetBuildingType('building_port').GetName] [Concept('concept_building', '$concept_buildings$')] y [GetBuildingType('building_trade_center').GetName] [Concept('concept_building', '$concept_buildings$')]. Se especializan en cargar y descargar mercancías y son de gran importancia para el funcionamiento del [concept_market]."
+ sailors:1 "@sailors! $sailors_no_icon$"
+ sailors_only_icon:1 "@sailors!"
+ sailors_no_icon:1 "Marineros"
+ sailors_desc:0 "Desde los mares hasta las costas, siempre habrá un marinero cumpliendo sus deberes a bordo de cualquier buque que el Estado le ordene tripular. Políticamente suelen alinearse con su función como parte de las Fuerzas Armadas."
+ soldiers:1 "@soldiers! $soldiers_no_icon$"
+ soldiers_only_icon:1 "@soldiers!"
+ soldiers_no_icon:1 "Soldados"
+ soldiers_desc:0 "Los soldados constituyen el grueso de las fuerzas terrestres de la nación. Políticamente suelen alinearse con su función como parte de las Fuerzas Armadas."

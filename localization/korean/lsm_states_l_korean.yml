@@ -1,0 +1,8 @@
+﻿l_korean:
+ STATE_LAKE_SUPERIOR: "슈피리어호"
+ STATE_LAKE_MICHIGAN: "미시간호"
+ STATE_LAKE_ONTARIO: "휴런호"
+ STATE_LAKE_ERIE: "이리호"
+ STATE_LAKE_HURON: "온타리오호"
+ region_great_lakes: "오대호"
+ region_midwest: "중서부"

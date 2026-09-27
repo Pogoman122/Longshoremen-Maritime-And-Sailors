@@ -1,0 +1,8 @@
+﻿l_simp_chinese:
+ STATE_LAKE_SUPERIOR: "苏必利尔湖"
+ STATE_LAKE_MICHIGAN: "密歇根湖"
+ STATE_LAKE_ONTARIO: "休伦湖"
+ STATE_LAKE_ERIE: "伊利湖"
+ STATE_LAKE_HURON: "安大略湖"
+ region_great_lakes: "五大湖"
+ region_midwest: "中西部"

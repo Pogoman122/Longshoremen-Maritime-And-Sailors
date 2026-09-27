@@ -1,0 +1,105 @@
+je_straits_question = {
+    icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+    group = je_group_historical_content
+    scripted_button = straits_ancient_rule_button
+    scripted_button = straits_open_passage_button
+    scripted_button = straits_russian_entente_button
+    scripted_button = straits_ottoman_prerogative_button
+    scripted_button = straits_conference_approve_button
+    scripted_button = straits_conference_reject_button
+
+    is_shown_when_inactive = {
+        lsm_straits_is_participant = yes
+        NOT = { has_variable = lsm_straits_journal_finished_var }
+    }
+    possible = {
+        custom_tooltip = {
+            text = lsm_straits_conference_open_tt
+            has_global_variable = hunkar_iskelesi_expired_global_var
+            has_global_variable = straits_conference_started_global_var
+        }
+    }
+
+    complete = {
+        custom_tooltip = {
+            text = lsm_straits_ballot_complete_tt
+            has_global_variable = straits_conference_has_concluded_global_var
+        }
+        custom_tooltip = {
+            text = lsm_straits_settlement_accepted_tt
+            has_global_variable = straits_convention_signed_tur_global_var
+        }
+    }
+    on_complete = {
+        hidden_effect = {
+            set_variable = lsm_straits_journal_finished_var
+            lsm_create_straits_convention_treaties = yes
+        }
+        trigger_event = { id = straits_question_events.4 popup = yes }
+    }
+    fail = {
+        custom_tooltip = {
+            text = lsm_straits_settlement_rejected_tt
+            has_global_variable = straits_convention_rejected_tur_global_var
+        }
+    }
+    on_fail = {
+        hidden_effect = { set_variable = lsm_straits_journal_finished_var }
+        trigger_event = { id = straits_question_events.5 popup = yes }
+    }
+    invalid = { NOT = { exists = c:TUR } }
+    on_invalid = { set_variable = lsm_straits_journal_finished_var }
+
+    on_monthly_pulse = {
+        effect = {
+            if = {
+                limit = { lsm_straits_is_chair = yes }
+                if = {
+                    limit = { NOT = { has_global_variable = straits_conference_has_concluded_global_var } }
+                    every_country = {
+                        limit = {
+                            lsm_straits_is_voter = yes
+                            has_journal_entry = je_straits_question
+                            is_ai = yes
+                            lsm_straits_has_voted = no
+                        }
+                        lsm_straits_cast_weighted_vote = yes
+                    }
+                    if = {
+                        limit = { global_var:je_straits_question_timer > 0 }
+                        change_global_variable = { name = je_straits_question_timer add = -1 }
+                    }
+                    if = {
+                        limit = { global_var:je_straits_question_timer <= 0 }
+                        every_country = {
+                            limit = {
+                                lsm_straits_is_voter = yes
+                                has_journal_entry = je_straits_question
+                                lsm_straits_has_voted = no
+                            }
+                            lsm_straits_cast_weighted_vote = yes
+                        }
+                        lsm_straits_resolve_ballot = yes
+                    }
+                }
+                else_if = {
+                    limit = {
+                        exists = global_var:je_straits_question_acceptance_timer
+                        NOT = { has_global_variable = straits_convention_signed_tur_global_var }
+                        NOT = { has_global_variable = straits_convention_rejected_tur_global_var }
+                    }
+                    if = {
+                        limit = { global_var:je_straits_question_acceptance_timer > 0 }
+                        change_global_variable = { name = je_straits_question_acceptance_timer add = -1 }
+                    }
+                    if = {
+                        limit = { global_var:je_straits_question_acceptance_timer <= 0 }
+                        c:TUR ?= { lsm_straits_accept_settlement = yes }
+                    }
+                }
+            }
+        }
+    }
+    weight = 100
+    should_be_pinned_by_default_uninvolved_or_context = yes
+}

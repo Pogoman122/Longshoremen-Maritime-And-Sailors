@@ -1,0 +1,3 @@
+﻿l_turkish:
+ state_longshoremen_mortality_mult:1 "$longshoremen$ için [Concept('concept_pop_growth', '$concept_pop_growth_mortality$')]"
+ state_longshoremen_mortality_mult_desc:1 "$longshoremen$ için [Concept('concept_pop_growth', '$concept_pop_growth_mortality$')] artışı veya azalışı"

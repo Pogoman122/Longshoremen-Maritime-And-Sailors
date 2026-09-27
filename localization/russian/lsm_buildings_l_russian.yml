@@ -1,0 +1,7 @@
+﻿l_russian:
+ building_government_lighthouse:0 "Маяк"
+ bg_lighthouse: "Маяки"
+ lsm_lighthouse_can_construct_tt: "Доступно строительство $building_government_lighthouse$."
+ canal_welland: "Уэллендский канал"
+ building_welland_canal:0 "Уэллендский канал"
+ building_welland_canal_lens_option:0 "Построить $building_welland_canal$"

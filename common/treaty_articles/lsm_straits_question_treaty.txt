@@ -1,0 +1,96 @@
+hunkar_iskelesi = {
+    kind = mutual
+    cost = 50
+    relations_progress_per_day = 1
+    relations_improvement_max = 80
+    icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/alliance_treaties.dds"
+
+    flags = {
+        friendly
+    }
+
+    mutual_exclusions = {
+        alliance
+        defensive_pact
+        guarantee_independence
+    }
+
+    visible = {
+        always = no
+    }
+
+    requirement_to_maintain = {
+        custom_tooltip = {
+            text = lsm_hunkar_not_superseded_tt
+            NOT = { has_global_variable = hunkar_iskelesi_expired_global_var }
+        }
+    }
+
+    can_withdraw = {
+        scope:withdrawing_country = {
+            is_ai = no
+        }
+    }
+}
+
+lsm_straits_ancient_rule = {
+    kind = mutual
+    cost = 0
+    icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/alliance_treaties.dds"
+    # The Ottoman AI honors this article through ai_strategy_default strait_scores.
+    # This article has no engine flag that locks a human controller into closure.
+
+    visible = { always = no }
+    can_withdraw = {
+        custom_tooltip = {
+            text = lsm_straits_human_withdrawal_tt
+            scope:withdrawing_country = { is_ai = no }
+        }
+    }
+}
+
+lsm_straits_open_passage = {
+    kind = directed
+    cost = 0
+    icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/alliance_treaties.dds"
+    flags = { is_no_strait_closure }
+
+    visible = { always = no }
+    can_withdraw = {
+        custom_tooltip = {
+            text = lsm_straits_human_withdrawal_tt
+            scope:withdrawing_country = { is_ai = no }
+        }
+    }
+}
+
+lsm_straits_russian_entente = {
+    kind = mutual
+    cost = 0
+    icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/alliance_treaties.dds"
+    # The Ottoman AI honors this article through ai_strategy_default strait_scores.
+    # This article has no engine flag that locks a human controller into closure.
+
+    visible = { always = no }
+    can_withdraw = {
+        custom_tooltip = {
+            text = lsm_straits_human_withdrawal_tt
+            scope:withdrawing_country = { is_ai = no }
+        }
+    }
+}
+
+lsm_straits_russian_access = {
+    kind = directed
+    cost = 0
+    icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/alliance_treaties.dds"
+    flags = { is_strait_access }
+
+    visible = { always = no }
+    can_withdraw = {
+        custom_tooltip = {
+            text = lsm_straits_human_withdrawal_tt
+            scope:withdrawing_country = { is_ai = no }
+        }
+    }
+}

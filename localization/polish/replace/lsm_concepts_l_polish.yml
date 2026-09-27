@@ -1,0 +1,6 @@
+﻿l_polish:
+ concept_sailor: "Marynarz"
+ concept_sailors: "Marynarze"
+ concept_sailor_desc: "[GetPopType('sailors').GetName] oraz [SelectLocalization(GetPlayer.IsValid,'concept_ship_crew_desc_added','Officers')], którzy tworzą [concept_ship_crew] [concept_ship].\n\nBudowa lub rozbudowa [GetBuildingType('building_naval_administration').GetName] [Concept('concept_building', '$concept_buildings$')] zwiększa liczbę dostępnych $concept_sailors$. Bezczynni $concept_sailors$ nadal otrzymują żołd, więc nadmiar zdolności oznacza marnotrawstwo [concept_government_expenses]."
+ state_longshoremen_mortality_mult:1 "[Concept('concept_pop_growth', '$concept_pop_growth_mortality$')] $longshoremen$"
+ state_longshoremen_mortality_mult_desc:1 "Wzrost lub spadek [Concept('concept_pop_growth', '$concept_pop_growth_mortality$')] $longshoremen$"

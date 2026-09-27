@@ -1,0 +1,166 @@
+# AI voting is handled by one weighted draw in the journal, not independent button rolls.
+
+straits_ancient_rule_button = {
+    name = straits_ancient_rule_button
+    desc = straits_ancient_rule_button_desc
+    visible = {
+        has_journal_entry = je_straits_question
+        lsm_straits_is_voter = yes
+        NOT = { has_global_variable = straits_conference_has_concluded_global_var }
+    }
+    selected = { has_variable = straits_ancient_rule_button_var }
+    possible = {
+        custom_tooltip = {
+            text = lsm_straits_voting_open_tt
+            global_var:je_straits_question_timer > 0
+        }
+        custom_tooltip = {
+            text = lsm_straits_not_voted_tt
+            lsm_straits_has_voted = no
+        }
+    }
+    ai_chance = { value = 0 }
+    effect = {
+        custom_tooltip = {
+            text = lsm_straits_vote_ancient_rule_tt
+            lsm_straits_cast_ancient_rule_vote = yes
+        }
+    }
+}
+
+straits_open_passage_button = {
+    name = straits_open_passage_button
+    desc = straits_open_passage_button_desc
+    visible = {
+        has_journal_entry = je_straits_question
+        lsm_straits_is_voter = yes
+        NOT = { has_global_variable = straits_conference_has_concluded_global_var }
+    }
+    selected = { has_variable = straits_open_passage_button_var }
+    possible = {
+        custom_tooltip = {
+            text = lsm_straits_voting_open_tt
+            global_var:je_straits_question_timer > 0
+        }
+        custom_tooltip = {
+            text = lsm_straits_not_voted_tt
+            lsm_straits_has_voted = no
+        }
+    }
+    ai_chance = { value = 0 }
+    effect = {
+        custom_tooltip = {
+            text = lsm_straits_vote_open_passage_tt
+            lsm_straits_cast_open_passage_vote = yes
+        }
+    }
+}
+
+straits_russian_entente_button = {
+    name = straits_russian_entente_button
+    desc = straits_russian_entente_button_desc
+    visible = {
+        has_journal_entry = je_straits_question
+        lsm_straits_is_voter = yes
+        NOT = { has_global_variable = straits_conference_has_concluded_global_var }
+    }
+    selected = { has_variable = straits_russian_entente_button_var }
+    possible = {
+        custom_tooltip = {
+            text = lsm_straits_voting_open_tt
+            global_var:je_straits_question_timer > 0
+        }
+        custom_tooltip = {
+            text = lsm_straits_not_voted_tt
+            lsm_straits_has_voted = no
+        }
+        custom_tooltip = {
+            text = lsm_straits_russia_exists_tt
+            exists = c:RUS
+        }
+
+    }
+    ai_chance = { value = 0 }
+    effect = {
+        custom_tooltip = {
+            text = lsm_straits_vote_russian_entente_tt
+            lsm_straits_cast_russian_entente_vote = yes
+        }
+    }
+}
+
+straits_ottoman_prerogative_button = {
+    name = straits_ottoman_prerogative_button
+    desc = straits_ottoman_prerogative_button_desc
+    visible = {
+        has_journal_entry = je_straits_question
+        lsm_straits_is_voter = yes
+        NOT = { has_global_variable = straits_conference_has_concluded_global_var }
+    }
+    selected = { has_variable = straits_ottoman_prerogative_button_var }
+    possible = {
+        custom_tooltip = {
+            text = lsm_straits_voting_open_tt
+            global_var:je_straits_question_timer > 0
+        }
+        custom_tooltip = {
+            text = lsm_straits_not_voted_tt
+            lsm_straits_has_voted = no
+        }
+    }
+    ai_chance = { value = 0 }
+    effect = {
+        custom_tooltip = {
+            text = lsm_straits_vote_ottoman_prerogative_tt
+            lsm_straits_cast_ottoman_prerogative_vote = yes
+        }
+    }
+}
+
+straits_conference_approve_button = {
+    name = straits_conference_approve_button
+    desc = straits_conference_approve_button_desc
+    visible = {
+        has_journal_entry = je_straits_question
+        c:TUR ?= this
+        has_global_variable = straits_conference_has_concluded_global_var
+        NOT = { has_global_variable = straits_ottoman_prerogative_global_var }
+    }
+    possible = {
+        custom_tooltip = {
+            text = lsm_straits_ottoman_decision_pending_tt
+            NOT = { has_variable = decided_on_straits_convention_var }
+        }
+    }
+    ai_chance = { value = 100 }
+    effect = {
+        custom_tooltip = {
+            text = lsm_straits_accept_settlement_tt
+            lsm_straits_accept_settlement = yes
+        }
+    }
+}
+
+straits_conference_reject_button = {
+    name = straits_conference_reject_button
+    desc = straits_conference_reject_button_desc
+    visible = {
+        has_journal_entry = je_straits_question
+        c:TUR ?= this
+        has_global_variable = straits_conference_has_concluded_global_var
+        NOT = { has_global_variable = straits_ottoman_prerogative_global_var }
+    }
+    possible = {
+        custom_tooltip = {
+            text = lsm_straits_ottoman_decision_pending_tt
+            NOT = { has_variable = decided_on_straits_convention_var }
+        }
+    }
+    ai_chance = { value = 0 }
+    effect = {
+        custom_tooltip = {
+            text = lsm_straits_reject_settlement_tt
+            lsm_straits_reject_settlement = yes
+        }
+    }
+}

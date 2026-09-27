@@ -1,0 +1,34 @@
+hunkar_iskelesi = {
+    kind = mutual
+    cost = 0
+    relations_progress_per_day = 0.01
+    relations_improvement_max = 80
+    icon = "gfx/interface/icons/diplomatic_treaties_articles_icons/alliance_treaties.dds"
+
+    flags = {
+        is_defensive_pact
+        friendly
+    }
+
+    mutual_exclusions = {
+        alliance
+        defensive_pact
+        guarantee_independence
+    }
+
+    visible = {
+        always = no
+    }
+
+    requirement_to_maintain = {
+        NOT = {
+            has_global_variable = hunkar_iskelesi_expired_global_var
+        }
+    }
+
+    can_withdraw = {
+        withdrawing_country = {
+            is_ai = no
+        }
+    }
+}
